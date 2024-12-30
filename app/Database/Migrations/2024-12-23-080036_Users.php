@@ -42,7 +42,7 @@ class Users extends Migration
             ],
             'level' => [
                 'type'       => 'ENUM', 
-                'constraint' => ['admin', 'user', 'superadmin'], 
+                'constraint' => ['admin', 'pegawai'], 
             ],
             'active' => [
                 'type'       => 'BOOLEAN',

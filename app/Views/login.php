@@ -53,29 +53,54 @@
 </head>
 
 <body>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        // SweetAlert for Success
+        <?php if (session()->getFlashdata('success')) : ?>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '<?= session()->getFlashdata('success') ?>',
+            });
+        <?php endif; ?>
+
+        // SweetAlert for Error
+        <?php if (session()->getFlashdata('error')) : ?>
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: '<?= session()->getFlashdata('error') ?>',
+            });
+        <?php endif; ?>
+    </script>
+
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <div class="text-center">
             <!-- Icon -->
             <div class="icon-circle">
                 <i class="bi bi-cash-register"></i>
-                <img src="" alt="logo">
+                <img src="https://cdn-icons-png.flaticon.com/128/10469/10469224.png" alt="logo">
             </div>
             <!-- Title -->
             <h1 class="h4">APLIKASI PERSEDIAAN BARANG</h1>
             <h2 class="h6 mb-4">Toko Mebel Sidarta</h2>
             <!-- Login Form -->
             <div class="login-card">
-                    <form>
-                        <div class="mb-3">
-                            <label for="username" class="form-label"><i class="bi bi-person"></i> Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Username">
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label"><i class="bi bi-lock"></i> Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
-                        </div>
-                        <button type="submit" class="btn btn-purple w-100">Sign In <i class="bi bi-box-arrow-in-right"></i></button>
-                    </form>
+
+                <form action="<?= site_url('/login') ?>" method="POST" autocomplete="off">
+                    <?= csrf_field() ?>
+                    <div class="mb-3">
+                        <label for="username" class="form-label"><i class="bi bi-person"></i> Username</label>
+                        <input type="text" name="username" class="form-control" id="username" placeholder="Username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label"><i class="bi bi-lock"></i> Password</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-purple w-100">Sign In <i class="bi bi-box-arrow-in-right"></i></button>
+                </form>
             </div>
             <!-- Footer -->
             <div class="mt-4">

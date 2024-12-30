@@ -44,3 +44,5 @@ class Barang extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 }
+
+
