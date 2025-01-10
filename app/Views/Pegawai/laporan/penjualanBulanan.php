@@ -2,8 +2,8 @@
 <?= $this->section('content') ?>
 
 <div class="container mt-3">
-    <h3>Laporan Bulanan Pembelian Barang</h3>
-    <form method="get" action="<?= base_url('Pegawai/cetakLaporanPembelian') ?>" target="_blank">
+    <h3>Laporan Bulanan Penjualan Barang</h3>
+    <form method="get" action="<?= base_url('Pegawai/cetakLaporanPenjualan') ?>" target="_blank">
         <div class="row mb-4">
             <div class="col-md-3">
                 <select name="bulan" class="form-control">
@@ -36,7 +36,7 @@
             <tr>
                 <th>#</th>
                 <th>Tanggal</th>
-                <th>ID Pembelian</th>
+                <th>ID Penjualan</th>
                 <th>Nama Supplier</th>
                 <th>Nama Barang</th>
                 <th>Brand</th>
@@ -48,12 +48,12 @@
         <tbody>
             <?php $no = 1;
             $totalBiaya = 0; ?>
-            <?php foreach ($pembelian as $row): ?>
+            <?php foreach ($penjualan as $row): ?>
                 <tr>
                     <td><?= $no++ ?></td>
-                    <td><?= date('d M Y', strtotime($row['tgl_pembelian'])) ?></td>
-                    <td><?= $row['id_pembelian'] ?></td>
-                    <td><?= $row['nama_supplier'] ?></td>
+                    <td><?= date('d M Y', strtotime($row['tgl_penjualan'])) ?></td>
+                    <td><?= $row['id_penjualan'] ?></td>
+                    <td><?= $row['nama_pembeli'] ?></td>
                     <td><?= $row['nama_barang'] ?></td>
                     <td><?= $row['brand'] ?></td>
                     <td><?= $row['qty'] ?></td>

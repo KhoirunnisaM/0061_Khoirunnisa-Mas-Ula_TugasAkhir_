@@ -853,8 +853,59 @@ class Admin extends BaseController
     // Laporan Stok Bulanan
     public function laporanStokBulan()
     {
-        return view('admin/laporan/stokBulanan');
+        $detailPenjualanModel = new DetailPenjualan();
+        $detailPembelianModel = new DetailPembelian();
+
+        // Ambil semua data penjualan
+        $penjualan = $detailPenjualanModel
+            ->select('barang.kode_barang, barang.nama_barang, barang.brand, barang.stok, SUM(detail_penjualan.qty) as total_qty_penjualan')
+            ->join('barang', 'barang.kode_barang = detail_penjualan.kode_barang')
+            ->join('penjualan', 'detail_penjualan.id_penjualan = penjualan.id_penjualan')
+            ->groupBy('barang.kode_barang')
+            ->findAll();
+
+        // Ambil semua data pembelian
+        $pembelian = $detailPembelianModel
+            ->select('barang.kode_barang, barang.nama_barang, barang.brand, barang.stok, SUM(detail_pembelian.qty) as total_qty_pembelian')
+            ->join('barang', 'barang.kode_barang = detail_pembelian.kode_barang')
+            ->join('pembelian', 'detail_pembelian.id_pembelian = pembelian.id_pembelian')
+            ->groupBy('barang.kode_barang')
+            ->findAll();
+
+        // Gabungkan data penjualan dan pembelian
+        $data = [];
+
+        foreach ($penjualan as $p) {
+            $kodeBarang = $p['kode_barang'];
+            $data[$kodeBarang] = [
+                'kode_barang' => $kodeBarang,
+                'nama_barang' => $p['nama_barang'],
+                'brand' => $p['brand'],
+                'stok' => $p['stok'],
+                'qty_penjualan' => $p['total_qty_penjualan'],
+                'qty_pembelian' => 0, // Default 0
+            ];
+        }
+
+        foreach ($pembelian as $p) {
+            $kodeBarang = $p['kode_barang'];
+            if (isset($data[$kodeBarang])) {
+                $data[$kodeBarang]['qty_pembelian'] = $p['total_qty_pembelian'];
+            } else {
+                $data[$kodeBarang] = [
+                    'kode_barang' => $kodeBarang,
+                    'nama_barang' => $p['nama_barang'],
+                    'brand' => $p['brand'],
+                    'stok' => $p['stok'],
+                    'qty_penjualan' => 0, // Default 0
+                    'qty_pembelian' => $p['total_qty_pembelian'],
+                ];
+            }
+        }
+
+        return view('Admin/laporan/stokBulanan', ['data' => $data]);
     }
+
 
     public function cariStok()
     {
@@ -1003,5 +1054,124 @@ class Admin extends BaseController
 
         // Menghentikan eksekusi setelah mengunduh
         exit;
+    }
+
+    // laporan pemebelian bulanan
+    public function laporanPembelianBulanan()
+    {
+        $bulan = $this->request->getVar('bulan') ?? date('m'); // Ambil bulan dari request, default bulan sekarang
+        $tahun = $this->request->getVar('tahun') ?? date('Y'); // Ambil tahun dari request, default tahun sekarang
+
+        $pembelianModel = new \App\Models\Pembelian();
+
+        // Ambil data pembelian berdasarkan bulan dan tahun
+        $dataPembelian = $pembelianModel->select('pembelian.*, supplier.nama_supplier, detail_pembelian.qty, detail_pembelian.harga AS harga_satuan, barang.nama_barang, barang.brand')
+            ->join('detail_pembelian', 'pembelian.id_pembelian = detail_pembelian.id_pembelian')
+            ->join('barang', 'detail_pembelian.kode_barang = barang.kode_barang')
+            ->join('supplier', 'pembelian.id_supplier = supplier.id_supplier')
+            ->where('MONTH(pembelian.tgl_pembelian)', $bulan)
+            ->where('YEAR(pembelian.tgl_pembelian)', $tahun)
+            ->findAll();
+
+        $data = [
+            'pembelian' => $dataPembelian,
+            'bulan' => $bulan,
+            'tahun' => $tahun,
+        ];
+
+        return view('admin/laporan/pembelianBulanan', $data);
+    }
+
+    public function cetakLaporanPembelian()
+    {
+        $bulan = $this->request->getVar('bulan');
+        $tahun = $this->request->getVar('tahun');
+
+        $pembelianModel = new Pembelian();
+
+        $query = $pembelianModel->select('pembelian.*, supplier.nama_supplier, detail_pembelian.qty, detail_pembelian.harga AS harga_satuan, barang.nama_barang, barang.brand')
+            ->join('detail_pembelian', 'pembelian.id_pembelian = detail_pembelian.id_pembelian')
+            ->join('barang', 'detail_pembelian.kode_barang = barang.kode_barang')
+            ->join('supplier', 'pembelian.id_supplier = supplier.id_supplier')
+            ->where('MONTH(pembelian.tgl_pembelian)', $bulan)
+            ->where('YEAR(pembelian.tgl_pembelian)', $tahun)
+            ->findAll();
+
+        $data = [
+            'bulan' => $bulan,
+            'tahun' => $tahun,
+            'pembelian' => $query,
+        ];
+
+        // Menggunakan Dompdf untuk generate laporan
+        $dompdf = new Dompdf();
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $dompdf->setOptions($options);
+
+        $html = view('Admin/laporan/cetakLaporanPembelian', $data);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        $dompdf->stream("laporan_pembelian_bulanan.pdf", ["Attachment" => 0]);
+    }
+
+    // laporan pemebelian bulanan
+    public function laporanPenjualanBulanan()
+    {
+        $bulan = $this->request->getVar('bulan') ?? date('m'); // Ambil bulan dari request, default bulan sekarang
+        $tahun = $this->request->getVar('tahun') ?? date('Y'); // Ambil tahun dari request, default tahun sekarang
+
+        $penjualanModel = new \App\Models\Penjualan();
+
+        $dataPenjualan = $penjualanModel->select('penjualan.*,  detail_penjualan.qty, detail_penjualan.harga AS harga_satuan, barang.nama_barang, barang.brand')
+            ->join('detail_penjualan', 'penjualan.id_penjualan = detail_penjualan.id_penjualan')
+            ->join('barang', 'detail_penjualan.kode_barang = barang.kode_barang')
+            ->where('MONTH(penjualan.tgl_penjualan)', $bulan)
+            ->where('YEAR(penjualan.tgl_penjualan)', $tahun)
+            ->findAll();
+
+        $data = [
+            'penjualan' => $dataPenjualan,
+            'bulan' => $bulan,
+            'tahun' => $tahun,
+        ];
+
+        return view('admin/laporan/penjualanBulanan', $data);
+    }
+
+    public function cetakLaporanPenjualan()
+    {
+        $bulan = $this->request->getVar('bulan');
+        $tahun = $this->request->getVar('tahun');
+
+        $penjualanModel = new Penjualan();
+
+        $query = $penjualanModel->select('penjualan.*, detail_penjualan.qty, detail_penjualan.harga AS harga_satuan, barang.nama_barang, barang.brand')
+            ->join('detail_penjualan', 'penjualan.id_penjualan = detail_penjualan.id_penjualan')
+            ->join('barang', 'detail_penjualan.kode_barang = barang.kode_barang')
+            ->where('MONTH(penjualan.tgl_penjualan)', $bulan)
+            ->where('YEAR(penjualan.tgl_penjualan)', $tahun)
+            ->findAll();
+
+        $data = [
+            'bulan' => $bulan,
+            'tahun' => $tahun,
+            'penjualan' => $query,
+        ];
+
+        // Menggunakan Dompdf untuk generate laporan
+        $dompdf = new Dompdf();
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $dompdf->setOptions($options);
+
+        $html = view('Admin/laporan/cetakLaporanPenjualan', $data);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        $dompdf->stream("laporan_penjualan_bulanan.pdf", ["Attachment" => 0]);
     }
 }

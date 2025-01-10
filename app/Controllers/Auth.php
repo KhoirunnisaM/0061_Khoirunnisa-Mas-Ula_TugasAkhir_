@@ -17,7 +17,6 @@ class Auth extends BaseController
 
     public function login()
     {
-        // Check if the request is a POST request
         if ($this->request->getMethod() === 'POST') {
             $username = $this->request->getPost('username');
             $password = $this->request->getPost('password');
@@ -34,6 +33,11 @@ class Auth extends BaseController
             if ($user && !password_verify($password, $user['password'])) {
                 return redirect()->back()->with('error', 'Password yang dimasukkan salah.');
             }
+
+            // Update kolom last_login
+            $userModel->update($user['id_user'], [
+                'last_login' => date('Y-m-d H:i:s')
+            ]);
 
             // Jika validasi berhasil, set session data
             session()->set([

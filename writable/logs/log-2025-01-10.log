@@ -1,0 +1,704 @@
+INFO - 2025-01-10 12:32:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:32:11 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:32:11 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:32:11 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:32:11 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","total_qty_pembelian":"5"}]
+DEBUG - 2025-01-10 12:32:11 --> Data gabungan: {"a12":{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":0,"qty_penjualan":"3","qty_pembelian":"1"},"A89":{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":0,"qty_penjualan":"1","qty_pembelian":"5"},"A99":{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":0,"qty_penjualan":0,"qty_pembelian":"5"}}
+INFO - 2025-01-10 12:36:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:36:18 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:36:18 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:36:18 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:36:18 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+CRITICAL - 2025-01-10 12:36:18 --> ErrorException: Undefined array key "stok"
+[Method: POST, Route: Pegawai/laporan/cariStok]
+in APPPATH\Controllers\Pegawai.php on line 919.
+ 1 APPPATH\Controllers\Pegawai.php(919): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "stok"', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Controllers\\Pegawai.php', 919)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->cariStok()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-10 12:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:36:30 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:36:30 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:36:30 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:36:30 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+CRITICAL - 2025-01-10 12:36:30 --> ErrorException: Undefined array key "stok"
+[Method: POST, Route: Pegawai/laporan/cariStok]
+in APPPATH\Controllers\Pegawai.php on line 919.
+ 1 APPPATH\Controllers\Pegawai.php(919): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "stok"', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Controllers\\Pegawai.php', 919)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->cariStok()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-10 12:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:36:31 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:36:31 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:36:31 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:36:31 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+CRITICAL - 2025-01-10 12:36:31 --> ErrorException: Undefined array key "stok"
+[Method: POST, Route: Pegawai/laporan/cariStok]
+in APPPATH\Controllers\Pegawai.php on line 919.
+ 1 APPPATH\Controllers\Pegawai.php(919): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "stok"', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Controllers\\Pegawai.php', 919)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->cariStok()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-10 12:36:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:36:49 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:36:49 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:36:49 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:36:49 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+INFO - 2025-01-10 12:37:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:37:11 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:37:11 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:37:11 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:37:11 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+INFO - 2025-01-10 12:37:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:37:37 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:37:37 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:37:37 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:37:37 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+INFO - 2025-01-10 12:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:37:39 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:37:39 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:37:39 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:37:39 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+INFO - 2025-01-10 12:37:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:37:50 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:37:50 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:37:50 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:37:50 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+DEBUG - 2025-01-10 12:37:50 --> Data gabungan: {"a12":{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","qty_penjualan":"3","qty_pembelian":"1"},"A89":{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","qty_penjualan":"1","qty_pembelian":"5"},"A99":{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","qty_penjualan":0,"qty_pembelian":"5"}}
+INFO - 2025-01-10 12:37:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:37:52 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:37:52 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:37:52 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:37:52 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+DEBUG - 2025-01-10 12:37:52 --> Data gabungan: {"a12":{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","qty_penjualan":"3","qty_pembelian":"1"},"A89":{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","qty_penjualan":"1","qty_pembelian":"5"},"A99":{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","qty_penjualan":0,"qty_pembelian":"5"}}
+INFO - 2025-01-10 12:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:38:03 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-02'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:03 --> Hasil penjualan: []
+DEBUG - 2025-01-10 12:38:03 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-02'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:03 --> Hasil pembelian: []
+DEBUG - 2025-01-10 12:38:03 --> Data gabungan: []
+INFO - 2025-01-10 12:38:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:38:08 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-03'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:08 --> Hasil penjualan: []
+DEBUG - 2025-01-10 12:38:08 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-03'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:08 --> Hasil pembelian: []
+DEBUG - 2025-01-10 12:38:08 --> Data gabungan: []
+INFO - 2025-01-10 12:38:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:38:11 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:11 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:38:11 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:11 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+DEBUG - 2025-01-10 12:38:11 --> Data gabungan: {"a12":{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","qty_penjualan":"3","qty_pembelian":"1"},"A89":{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","qty_penjualan":"1","qty_pembelian":"5"},"A99":{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","qty_penjualan":0,"qty_pembelian":"5"}}
+INFO - 2025-01-10 12:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:38:18 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:18 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:38:18 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:18 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+DEBUG - 2025-01-10 12:38:18 --> Data gabungan: {"a12":{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","qty_penjualan":"3","qty_pembelian":"1"},"A89":{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","qty_penjualan":"1","qty_pembelian":"5"},"A99":{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","qty_penjualan":0,"qty_pembelian":"5"}}
+INFO - 2025-01-10 12:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:38:23 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-03'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:23 --> Hasil penjualan: []
+DEBUG - 2025-01-10 12:38:23 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-03'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:23 --> Hasil pembelian: []
+DEBUG - 2025-01-10 12:38:23 --> Data gabungan: []
+INFO - 2025-01-10 12:38:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:38:26 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-02'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:26 --> Hasil penjualan: []
+DEBUG - 2025-01-10 12:38:26 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-02'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:26 --> Hasil pembelian: []
+DEBUG - 2025-01-10 12:38:26 --> Data gabungan: []
+INFO - 2025-01-10 12:38:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:38:29 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:29 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:38:29 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:29 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+DEBUG - 2025-01-10 12:38:29 --> Data gabungan: {"a12":{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","qty_penjualan":"3","qty_pembelian":"1"},"A89":{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","qty_penjualan":"1","qty_pembelian":"5"},"A99":{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","qty_penjualan":0,"qty_pembelian":"5"}}
+INFO - 2025-01-10 12:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:38:55 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:55 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:38:55 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:38:55 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","total_qty_pembelian":"5"}]
+DEBUG - 2025-01-10 12:38:55 --> Data gabungan: {"a12":{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":0,"qty_penjualan":"3","qty_pembelian":"1"},"A89":{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":0,"qty_penjualan":"1","qty_pembelian":"5"},"A99":{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":0,"qty_penjualan":0,"qty_pembelian":"5"}}
+INFO - 2025-01-10 12:39:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:39:24 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:39:24 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:39:24 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:39:24 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+DEBUG - 2025-01-10 12:39:24 --> Data gabungan: {"a12":{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","qty_penjualan":"3","qty_pembelian":"1"},"A89":{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","qty_penjualan":"1","qty_pembelian":"5"},"A99":{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","qty_penjualan":0,"qty_pembelian":"5"}}
+INFO - 2025-01-10 12:40:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:40:14 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:40:14 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:40:14 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:40:14 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+DEBUG - 2025-01-10 12:40:14 --> Data gabungan: {"a12":{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","qty_penjualan":"3","qty_pembelian":"1"},"A89":{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","qty_penjualan":"1","qty_pembelian":"5"},"A99":{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","qty_penjualan":0,"qty_pembelian":"5"}}
+INFO - 2025-01-10 12:40:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:40:32 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:40:32 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:40:32 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:40:32 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+DEBUG - 2025-01-10 12:40:32 --> Data gabungan: {"a12":{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","qty_penjualan":"3","qty_pembelian":"1"},"A89":{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","qty_penjualan":"1","qty_pembelian":"5"},"A99":{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","qty_penjualan":0,"qty_pembelian":"5"}}
+INFO - 2025-01-10 12:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:40:40 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:40:40 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:40:40 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:40:40 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+DEBUG - 2025-01-10 12:40:40 --> Data gabungan: {"a12":{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","qty_penjualan":"3","qty_pembelian":"1"},"A89":{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","qty_penjualan":"1","qty_pembelian":"5"},"A99":{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","qty_penjualan":0,"qty_pembelian":"5"}}
+INFO - 2025-01-10 12:40:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:40:59 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-02'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:40:59 --> Hasil penjualan: []
+DEBUG - 2025-01-10 12:40:59 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-02'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:40:59 --> Hasil pembelian: []
+DEBUG - 2025-01-10 12:40:59 --> Data gabungan: []
+INFO - 2025-01-10 12:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:56:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:56:46 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-02'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:56:46 --> Hasil penjualan: []
+DEBUG - 2025-01-10 12:56:46 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-02'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:56:46 --> Hasil pembelian: []
+DEBUG - 2025-01-10 12:56:46 --> Data gabungan: []
+INFO - 2025-01-10 12:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:56:48 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-02'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:56:48 --> Hasil penjualan: []
+DEBUG - 2025-01-10 12:56:48 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-02'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:56:48 --> Hasil pembelian: []
+DEBUG - 2025-01-10 12:56:48 --> Data gabungan: []
+INFO - 2025-01-10 12:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:56:53 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:56:53 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:56:53 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:56:53 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+DEBUG - 2025-01-10 12:56:53 --> Data gabungan: {"a12":{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","qty_penjualan":"3","qty_pembelian":"1"},"A89":{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","qty_penjualan":"1","qty_pembelian":"5"},"A99":{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","qty_penjualan":0,"qty_pembelian":"5"}}
+INFO - 2025-01-10 12:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:57:03 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-02'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:57:03 --> Hasil penjualan: []
+DEBUG - 2025-01-10 12:57:03 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-02'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:57:03 --> Hasil pembelian: []
+DEBUG - 2025-01-10 12:57:03 --> Data gabungan: []
+INFO - 2025-01-10 12:57:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:57:07 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:57:07 --> Hasil penjualan: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_penjualan":"3"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_penjualan":"1"}]
+DEBUG - 2025-01-10 12:57:07 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-01'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:57:07 --> Hasil pembelian: [{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","total_qty_pembelian":"1"},{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","total_qty_pembelian":"5"},{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","total_qty_pembelian":"5"}]
+DEBUG - 2025-01-10 12:57:07 --> Data gabungan: {"a12":{"kode_barang":"a12","nama_barang":"mouse","brand":"logitetch","stok":"39","qty_penjualan":"3","qty_pembelian":"1"},"A89":{"kode_barang":"A89","nama_barang":"MOUSE","brand":"LOGITECH","stok":"3","qty_penjualan":"1","qty_pembelian":"5"},"A99":{"kode_barang":"A99","nama_barang":"A","brand":"ds","stok":"5","qty_penjualan":0,"qty_pembelian":"5"}}
+INFO - 2025-01-10 12:57:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:57:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-10 12:57:33 --> Query penjualan: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_penjualan.qty) as total_qty_penjualan
+FROM `detail_penjualan`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+JOIN `penjualan` ON `detail_penjualan`.`id_penjualan` = `penjualan`.`id_penjualan`
+WHERE DATE_FORMAT(tgl_penjualan, '%Y-%m') = '2025-03'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:57:33 --> Hasil penjualan: []
+DEBUG - 2025-01-10 12:57:33 --> Query pembelian: SELECT `barang`.`kode_barang`, `barang`.`nama_barang`, `barang`.`brand`, `barang`.`stok`, SUM(detail_pembelian.qty) as total_qty_pembelian
+FROM `detail_pembelian`
+JOIN `barang` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+JOIN `pembelian` ON `detail_pembelian`.`id_pembelian` = `pembelian`.`id_pembelian`
+WHERE DATE_FORMAT(tgl_pembelian, '%Y-%m') = '2025-03'
+GROUP BY `barang`.`kode_barang`
+DEBUG - 2025-01-10 12:57:33 --> Hasil pembelian: []
+DEBUG - 2025-01-10 12:57:33 --> Data gabungan: []
+INFO - 2025-01-10 12:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:57:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:58:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:58:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:58:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 12:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:04:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:04:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:04:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:05:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:05:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:05:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:05:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:05:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:05:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:07:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:07:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:08:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:08:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:08:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:08:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:09:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:09:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:09:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-10 20:09:40 --> Gagal menyimpan penjualan: {"id_penjualan":"FP10012025200940","tgl_penjualan":"2025-01-10 20:09:40","nama_pembeli":"diaz","id_user":"1"}
+ERROR - 2025-01-10 20:09:40 --> Gagal menyimpan detail penjualan: {"id_penjualan":"FP10012025200940","kode_barang":"A89","qty":"3","harga":"40000"}
+INFO - 2025-01-10 20:09:40 --> Stok barang berhasil diperbarui: Kode Barang - A89, Stok Baru - 0
+INFO - 2025-01-10 13:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:09:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:10:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:10:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:10:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:10:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-10 20:10:51 --> Gagal menyimpan penjualan: {"id_penjualan":"FP10012025201051","tgl_penjualan":"2025-01-10 20:10:51","nama_pembeli":"g","id_user":"1"}
+ERROR - 2025-01-10 20:10:51 --> Gagal menyimpan detail penjualan: {"id_penjualan":"FP10012025201051","kode_barang":"A89","qty":"3","harga":"40000"}
+INFO - 2025-01-10 20:10:51 --> Stok barang berhasil diperbarui: Kode Barang - A89, Stok Baru - -3
+INFO - 2025-01-10 13:10:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:10:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:11:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:11:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:11:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:12:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:12:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:12:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:12:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:12:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:12:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:12:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:13:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:13:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:13:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:13:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:13:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:13:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:13:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:13:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-10 13:13:36 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Admin\pembelian\index.php on line 55.
+ 1 APPPATH\Views\Admin\pembelian\index.php(55): number_format(null, 0, ',', '.')
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\pembelian\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/pembelian/index', [], true)
+ 5 APPPATH\Controllers\Admin.php(445): view('admin/pembelian/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->pembelian()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-10 13:13:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:13:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:13:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:13:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-10 13:13:54 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Admin\penjualan\index.php on line 55.
+ 1 APPPATH\Views\Admin\penjualan\index.php(55): number_format(null, 0, ',', '.')
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\penjualan\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/penjualan/index', [], true)
+ 5 APPPATH\Controllers\Admin.php(596): view('admin/penjualan/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->penjualan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+WARNING - 2025-01-10 13:13:54 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Admin\penjualan\index.php on line 55.
+ 1 APPPATH\Views\Admin\penjualan\index.php(55): number_format(null, 0, ',', '.')
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\penjualan\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/penjualan/index', [], true)
+ 5 APPPATH\Controllers\Admin.php(596): view('admin/penjualan/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->penjualan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-10 13:14:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:14:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-01-10 13:14:00 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Admin\penjualan\index.php on line 55.
+ 1 APPPATH\Views\Admin\penjualan\index.php(55): number_format(null, 0, ',', '.')
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\penjualan\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/penjualan/index', [], true)
+ 5 APPPATH\Controllers\Admin.php(596): view('admin/penjualan/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->penjualan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-10 13:14:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:14:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:14:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:14:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:14:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:14:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:15:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:15:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:15:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:15:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:15:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:15:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:18:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:18:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:18:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:18:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:19:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:19:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:20:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:20:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:23:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:23:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:24:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:24:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:25:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:25:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:26:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:26:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:26:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:26:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:26:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:27:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:28:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:28:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:28:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:28:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:29:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:32:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:32:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:32:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:32:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:33:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:33:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:33:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:33:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:33:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:33:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:33:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:33:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:33:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:34:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-10 13:36:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

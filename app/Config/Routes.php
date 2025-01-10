@@ -61,12 +61,19 @@ $routes->group('Admin', ['filter' => 'level:admin'], function ($routes) {
     $routes->post('laporan/cariStok', 'Admin::cariStok');
     $routes->get('laporan/cetakStok', 'Admin::cetakStok');
 
+    // laporan pembelian bulanan
+    $routes->get('laporan/pembelian-bulanan', 'Admin::laporanPembelianBulanan');
+    $routes->get('cetakLaporanPembelian', 'Admin::cetakLaporanPembelian');
+
+    // laporan penjualan bulanan
+    $routes->get('laporan/penjualan-bulanan', 'Admin::laporanPenjualanBulanan');
+    $routes->get('cetakLaporanPenjualan', 'Admin::cetakLaporanPenjualan');
 });
 
 $routes->group('Pegawai', ['filter' => 'level:pegawai'], function ($routes) {
     $routes->get('dashboard', 'Pegawai::dashboard');
-       
-    
+
+
     // data barang
     $routes->get('barang', 'Pegawai::barang');
     $routes->get('barang/create', 'Pegawai::tambahBarang');
@@ -74,27 +81,39 @@ $routes->group('Pegawai', ['filter' => 'level:pegawai'], function ($routes) {
     $routes->get('barang/edit/(:any)', 'Pegawai::editBarang/$1');
     $routes->post('barang/edit/(:any)', 'Pegawai::editBarang/$1');
     $routes->get('barang/hapus/(:any)', 'Pegawai::hapusBarang/$1');
-    
+
     // pembelian
-        $routes->get('pembelian', 'Pegawai::pembelian');
-        $routes->get('pembelian/create', 'Pegawai::tambahPembelian');
-        $routes->post('pembelian/store', 'Pegawai::tambahPembelian');
-        $routes->get('pembelian/edit/(:any)', 'Pegawai::editPembelian/$1');
-        $routes->post('pembelian/update/(:any)', 'Pegawai::updatePembelian/$1');
-        $routes->get('pembelian/hapus/(:any)', 'Pegawai::hapusPembelian/$1');
-        $routes->get('pembelian/detail/(:any)', 'Pegawai::detailPembelian/$1');
-    
-        // penjualan 
-        $routes->get('penjualan', 'Pegawai::penjualan');
-        $routes->get('penjualan/create', 'Pegawai::tambahPenjualan');
-        $routes->post('penjualan/store', 'Pegawai::tambahPenjualan');
-        $routes->get('penjualan/edit/(:any)', 'Pegawai::editPenjualan/$1');
-        $routes->post('penjualan/update/(:any)', 'Pegawai::updatePenjualan/$1');
-        $routes->get('penjualan/hapus/(:any)', 'Pegawai::hapusPenjualan/$1');
-        $routes->get('penjualan/detail/(:any)', 'Pegawai::detailPenjualan/$1');
-    
-        // laporan stok barang bulanan
-        $routes->get('laporan/stok-bulanan', 'Pegawai::laporanStokBulan');
-        $routes->post('laporan/cariStok', 'Pegawai::cariStok');
-        $routes->get('laporan/cetakStok', 'Pegawai::cetakStok');
+    $routes->get('pembelian', 'Pegawai::pembelian');
+    $routes->get('pembelian/create', 'Pegawai::tambahPembelian');
+    $routes->post('pembelian/store', 'Pegawai::tambahPembelian');
+    $routes->get('pembelian/edit/(:any)', 'Pegawai::editPembelian/$1');
+    $routes->post('pembelian/update/(:any)', 'Pegawai::updatePembelian/$1');
+    $routes->get('pembelian/hapus/(:any)', 'Pegawai::hapusPembelian/$1');
+    $routes->get('pembelian/detail/(:any)', 'Pegawai::detailPembelian/$1');
+
+    // penjualan 
+    $routes->get('penjualan', 'Pegawai::penjualan');
+    $routes->get('penjualan/create', 'Pegawai::tambahPenjualan');
+    $routes->post('penjualan/store', 'Pegawai::tambahPenjualan');
+    $routes->get('penjualan/edit/(:any)', 'Pegawai::editPenjualan/$1');
+    $routes->post('penjualan/update/(:any)', 'Pegawai::updatePenjualan/$1');
+    $routes->get('penjualan/hapus/(:any)', 'Pegawai::hapusPenjualan/$1');
+    $routes->get('penjualan/detail/(:any)', 'Pegawai::detailPenjualan/$1');
+
+    // laporan stok barang bulanan
+    $routes->get('laporan/stok-bulanan', 'Pegawai::laporanStokBulan');
+    $routes->get('laporan/cetakStok', 'Pegawai::cetakStok');
+
+    // laporan stok barang bulanan
+    $routes->get('laporan/stok-bulanan', 'Pegawai::laporanStokBulan');
+    $routes->post('laporan/cariStok', 'Pegawai::cariStok');
+    $routes->get('laporan/cetakStok', 'Pegawai::cetakStok');
+
+    // laporan pembelian bulanan
+    $routes->get('laporan/pembelian-bulanan', 'Pegawai::laporanPembelianBulanan');
+    $routes->get('cetakLaporanPembelian', 'Pegawai::cetakLaporanPembelian');
+
+    // laporan penjualan bulanan
+    $routes->get('laporan/penjualan-bulanan', 'Pegawai::laporanPenjualanBulanan');
+    $routes->get('cetakLaporanPenjualan', 'Pegawai::cetakLaporanPenjualan');
 });

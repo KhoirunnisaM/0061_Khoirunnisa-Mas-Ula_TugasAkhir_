@@ -1,0 +1,657 @@
+INFO - 2025-01-09 07:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 07:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 07:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 07:25:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 07:26:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 07:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 07:26:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 07:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 07:27:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 08:00:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 08:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 08:00:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 08:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 08:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:15:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:20:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 13:20:48 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/admin.php"
+[Method: GET, Route: Admin/laporan/pembelian-bulanan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/admin.php')
+ 2 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('layouts/admin', [], true)
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/laporan/pembelianBulanan', [], true)
+ 4 APPPATH\Controllers\Admin.php(40): view('admin/laporan/pembelianBulanan')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->laporanPembelianBulanan()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 13:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 13:21:11 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/main.php"
+[Method: GET, Route: Admin/laporan/pembelian-bulanan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/main.php')
+ 2 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('layouts/main', [], true)
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/laporan/pembelianBulanan', [], true)
+ 4 APPPATH\Controllers\Admin.php(40): view('admin/laporan/pembelianBulanan')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->laporanPembelianBulanan()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 13:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 13:21:12 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/main.php"
+[Method: GET, Route: Admin/laporan/pembelian-bulanan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/main.php')
+ 2 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('layouts/main', [], true)
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/laporan/pembelianBulanan', [], true)
+ 4 APPPATH\Controllers\Admin.php(40): view('admin/laporan/pembelianBulanan')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->laporanPembelianBulanan()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 13:21:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 13:21:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/main.php"
+[Method: GET, Route: Admin/laporan/pembelian-bulanan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/main.php')
+ 2 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('layouts/main', [], true)
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/laporan/pembelianBulanan', [], true)
+ 4 APPPATH\Controllers\Admin.php(40): view('admin/laporan/pembelianBulanan')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->laporanPembelianBulanan()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 13:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:21:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:23:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:23:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 13:25:42 --> ErrorException: Undefined variable $pembelian
+[Method: GET, Route: Admin/laporan/pembelian-bulanan]
+in APPPATH\Views\Admin\laporan\pembelianBulanan.php on line 56.
+ 1 APPPATH\Views\Admin\laporan\pembelianBulanan.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pembelian', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\pembelianBulanan.php', 56)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\pembelianBulanan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/laporan/pembelianBulanan', [], true)
+ 5 APPPATH\Controllers\Admin.php(40): view('admin/laporan/pembelianBulanan')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->laporanPembelianBulanan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 13:26:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:27:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:27:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:31:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:33:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:33:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:33:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:33:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:33:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:35:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:36:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:36:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:36:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:37:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:40:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:40:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:41:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:41:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:41:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:42:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:42:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:42:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:42:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:42:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:42:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:42:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:42:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:43:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:43:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:44:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:45:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:46:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:46:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:46:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:46:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:46:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:47:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:47:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:47:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:47:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:48:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:48:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:48:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:49:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:49:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:49:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:49:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:49:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:52:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:52:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:53:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:54:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:54:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:54:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:54:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:54:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:55:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:55:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:55:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:55:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:56:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:56:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:59:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:01:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:01:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:02:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:02:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:03:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:04:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:04:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 14:04:23 --> ErrorException: Undefined variable $bulan
+[Method: GET, Route: Pegawai/laporan/stok-bulanan]
+in APPPATH\Views\Pegawai\laporan\stokBulanan.php on line 71.
+ 1 APPPATH\Views\Pegawai\laporan\stokBulanan.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bulan', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Pegawai\\laporan\\stokBulanan.php', 71)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Pegawai\\laporan\\stokBulanan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Pegawai/laporan/stokBulanan', [], true)
+ 5 APPPATH\Controllers\Pegawai.php(871): view('Pegawai/laporan/stokBulanan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 14:04:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:05:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 14:05:09 --> ErrorException: Undefined variable $bulan
+[Method: GET, Route: Pegawai/laporan/stok-bulanan]
+in APPPATH\Views\Pegawai\laporan\stokBulanan.php on line 71.
+ 1 APPPATH\Views\Pegawai\laporan\stokBulanan.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bulan', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Pegawai\\laporan\\stokBulanan.php', 71)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Pegawai\\laporan\\stokBulanan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Pegawai/laporan/stokBulanan', [], true)
+ 5 APPPATH\Controllers\Pegawai.php(871): view('Pegawai/laporan/stokBulanan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 14:05:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:07:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 14:07:30 --> ErrorException: Undefined variable $bulan
+[Method: GET, Route: Pegawai/laporan/stok-bulanan]
+in APPPATH\Views\Admin\laporan\stokBulanan.php on line 71.
+ 1 APPPATH\Views\Admin\laporan\stokBulanan.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bulan', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php', 71)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/laporan/stokBulanan', [], true)
+ 5 APPPATH\Controllers\Pegawai.php(871): view('Admin/laporan/stokBulanan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 14:07:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 14:07:31 --> ErrorException: Undefined variable $bulan
+[Method: GET, Route: Pegawai/laporan/stok-bulanan]
+in APPPATH\Views\Admin\laporan\stokBulanan.php on line 71.
+ 1 APPPATH\Views\Admin\laporan\stokBulanan.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bulan', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php', 71)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/laporan/stokBulanan', [], true)
+ 5 APPPATH\Controllers\Pegawai.php(871): view('Admin/laporan/stokBulanan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 14:08:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 14:08:05 --> ErrorException: Undefined variable $bulan
+[Method: GET, Route: Pegawai/laporan/stok-bulanan]
+in APPPATH\Views\Admin\laporan\stokBulanan.php on line 71.
+ 1 APPPATH\Views\Admin\laporan\stokBulanan.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bulan', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php', 71)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/laporan/stokBulanan', [], true)
+ 5 APPPATH\Controllers\Pegawai.php(873): view('Admin/laporan/stokBulanan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 14:08:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 14:08:47 --> ErrorException: Undefined variable $bulan
+[Method: GET, Route: Pegawai/laporan/stok-bulanan]
+in APPPATH\Views\Admin\laporan\stokBulanan.php on line 71.
+ 1 APPPATH\Views\Admin\laporan\stokBulanan.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bulan', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php', 71)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/laporan/stokBulanan', [], true)
+ 5 APPPATH\Controllers\Pegawai.php(871): view('Admin/laporan/stokBulanan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 14:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 14:08:48 --> ErrorException: Undefined variable $bulan
+[Method: GET, Route: Pegawai/laporan/stok-bulanan]
+in APPPATH\Views\Admin\laporan\stokBulanan.php on line 71.
+ 1 APPPATH\Views\Admin\laporan\stokBulanan.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bulan', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php', 71)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/laporan/stokBulanan', [], true)
+ 5 APPPATH\Controllers\Pegawai.php(871): view('Admin/laporan/stokBulanan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 14:08:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 14:08:49 --> ErrorException: Undefined variable $bulan
+[Method: GET, Route: Pegawai/laporan/stok-bulanan]
+in APPPATH\Views\Admin\laporan\stokBulanan.php on line 71.
+ 1 APPPATH\Views\Admin\laporan\stokBulanan.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bulan', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php', 71)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/laporan/stokBulanan', [], true)
+ 5 APPPATH\Controllers\Pegawai.php(871): view('Admin/laporan/stokBulanan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 14:08:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 14:08:49 --> ErrorException: Undefined variable $bulan
+[Method: GET, Route: Pegawai/laporan/stok-bulanan]
+in APPPATH\Views\Admin\laporan\stokBulanan.php on line 71.
+ 1 APPPATH\Views\Admin\laporan\stokBulanan.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bulan', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php', 71)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/laporan/stokBulanan', [], true)
+ 5 APPPATH\Controllers\Pegawai.php(871): view('Admin/laporan/stokBulanan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 14:08:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:08:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 14:08:55 --> ErrorException: Undefined variable $bulan
+[Method: GET, Route: Pegawai/laporan/stok-bulanan]
+in APPPATH\Views\Admin\laporan\stokBulanan.php on line 71.
+ 1 APPPATH\Views\Admin\laporan\stokBulanan.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bulan', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php', 71)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/laporan/stokBulanan', [], true)
+ 5 APPPATH\Controllers\Pegawai.php(871): view('Admin/laporan/stokBulanan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 14:09:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 14:09:06 --> ErrorException: Undefined variable $bulan
+[Method: GET, Route: Pegawai/laporan/stok-bulanan]
+in APPPATH\Views\Admin\laporan\stokBulanan.php on line 71.
+ 1 APPPATH\Views\Admin\laporan\stokBulanan.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bulan', 'C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php', 71)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\webTA_inventory3\\app\\Views\\Admin\\laporan\\stokBulanan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/laporan/stokBulanan', [], true)
+ 5 APPPATH\Controllers\Pegawai.php(871): view('Admin/laporan/stokBulanan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 14:09:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:13:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:13:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:14:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-09 14:14:08 --> mysqli_sql_exception: Unknown column 'detail_pembelian.tgl_pembelian' in 'where clause' in C:\xampp\htdocs\webTA_inventory3\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\webTA_inventory3\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `barang`...', 0)
+#1 C:\xampp\htdocs\webTA_inventory3\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `barang`...')
+#2 C:\xampp\htdocs\webTA_inventory3\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `barang`...')
+#3 C:\xampp\htdocs\webTA_inventory3\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `barang`...', Array, false)
+#4 C:\xampp\htdocs\webTA_inventory3\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\webTA_inventory3\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\webTA_inventory3\app\Controllers\Pegawai.php(880): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\webTA_inventory3\system\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+#8 C:\xampp\htdocs\webTA_inventory3\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+#9 C:\xampp\htdocs\webTA_inventory3\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\webTA_inventory3\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\webTA_inventory3\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\webTA_inventory3\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\webTA_inventory3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-01-09 14:14:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'detail_pembelian.tgl_pembelian' in 'where clause'
+[Method: GET, Route: Pegawai/laporan/stok-bulanan]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = :MONTH(detail_pembelian.tgl_pembelian):
+AND MONTH(detail_penjualan.tgl_penjualan) = :MONTH(detail_penjualan.tgl_penjualan):
+AND YEAR(detail_pembelian.tgl_pembelian) = :YEAR(detail_pembelian.tgl_pembelian):
+AND YEAR(detail_penjualan.tgl_penjualan) = :YEAR(detail_penjualan.tgl_penjualan):
+GROUP BY `barang`.`kode_barang`', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Pegawai.php(880): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+CRITICAL - 2025-01-09 14:14:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'detail_pembelian.tgl_pembelian' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = \'2\'
+AND MONTH(detail_penjualan.tgl_penjualan) = \'2\'
+AND YEAR(detail_pembelian.tgl_pembelian) = \'2025\'
+AND YEAR(detail_penjualan.tgl_penjualan) = \'2025\'
+GROUP BY `barang`.`kode_barang`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = \'2\'
+AND MONTH(detail_penjualan.tgl_penjualan) = \'2\'
+AND YEAR(detail_pembelian.tgl_pembelian) = \'2025\'
+AND YEAR(detail_penjualan.tgl_penjualan) = \'2025\'
+GROUP BY `barang`.`kode_barang`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = :MONTH(detail_pembelian.tgl_pembelian):
+AND MONTH(detail_penjualan.tgl_penjualan) = :MONTH(detail_penjualan.tgl_penjualan):
+AND YEAR(detail_pembelian.tgl_pembelian) = :YEAR(detail_pembelian.tgl_pembelian):
+AND YEAR(detail_penjualan.tgl_penjualan) = :YEAR(detail_penjualan.tgl_penjualan):
+GROUP BY `barang`.`kode_barang`', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Pegawai.php(880): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+CRITICAL - 2025-01-09 14:14:08 --> [Caused by] mysqli_sql_exception: Unknown column 'detail_pembelian.tgl_pembelian' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = \'2\'
+AND MONTH(detail_penjualan.tgl_penjualan) = \'2\'
+AND YEAR(detail_pembelian.tgl_pembelian) = \'2025\'
+AND YEAR(detail_penjualan.tgl_penjualan) = \'2025\'
+GROUP BY `barang`.`kode_barang`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = \'2\'
+AND MONTH(detail_penjualan.tgl_penjualan) = \'2\'
+AND YEAR(detail_pembelian.tgl_pembelian) = \'2025\'
+AND YEAR(detail_penjualan.tgl_penjualan) = \'2025\'
+GROUP BY `barang`.`kode_barang`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = \'2\'
+AND MONTH(detail_penjualan.tgl_penjualan) = \'2\'
+AND YEAR(detail_pembelian.tgl_pembelian) = \'2025\'
+AND YEAR(detail_penjualan.tgl_penjualan) = \'2025\'
+GROUP BY `barang`.`kode_barang`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = :MONTH(detail_pembelian.tgl_pembelian):
+AND MONTH(detail_penjualan.tgl_penjualan) = :MONTH(detail_penjualan.tgl_penjualan):
+AND YEAR(detail_pembelian.tgl_pembelian) = :YEAR(detail_pembelian.tgl_pembelian):
+AND YEAR(detail_penjualan.tgl_penjualan) = :YEAR(detail_penjualan.tgl_penjualan):
+GROUP BY `barang`.`kode_barang`', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Pegawai.php(880): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 14:14:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:14:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:14:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:14:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-09 14:14:44 --> mysqli_sql_exception: Unknown column 'detail_pembelian.tgl_pembelian' in 'where clause' in C:\xampp\htdocs\webTA_inventory3\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\webTA_inventory3\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `barang`...', 0)
+#1 C:\xampp\htdocs\webTA_inventory3\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `barang`...')
+#2 C:\xampp\htdocs\webTA_inventory3\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `barang`...')
+#3 C:\xampp\htdocs\webTA_inventory3\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `barang`...', Array, false)
+#4 C:\xampp\htdocs\webTA_inventory3\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\webTA_inventory3\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\webTA_inventory3\app\Controllers\Pegawai.php(880): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\webTA_inventory3\system\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+#8 C:\xampp\htdocs\webTA_inventory3\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+#9 C:\xampp\htdocs\webTA_inventory3\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\webTA_inventory3\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\webTA_inventory3\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\webTA_inventory3\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\webTA_inventory3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-01-09 14:14:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'detail_pembelian.tgl_pembelian' in 'where clause'
+[Method: GET, Route: Pegawai/laporan/stok-bulanan]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = :MONTH(detail_pembelian.tgl_pembelian):
+AND MONTH(detail_penjualan.tgl_penjualan) = :MONTH(detail_penjualan.tgl_penjualan):
+AND YEAR(detail_pembelian.tgl_pembelian) = :YEAR(detail_pembelian.tgl_pembelian):
+AND YEAR(detail_penjualan.tgl_penjualan) = :YEAR(detail_penjualan.tgl_penjualan):
+GROUP BY `barang`.`kode_barang`', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Pegawai.php(880): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+CRITICAL - 2025-01-09 14:14:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'detail_pembelian.tgl_pembelian' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = \'1\'
+AND MONTH(detail_penjualan.tgl_penjualan) = \'1\'
+AND YEAR(detail_pembelian.tgl_pembelian) = \'2025\'
+AND YEAR(detail_penjualan.tgl_penjualan) = \'2025\'
+GROUP BY `barang`.`kode_barang`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = \'1\'
+AND MONTH(detail_penjualan.tgl_penjualan) = \'1\'
+AND YEAR(detail_pembelian.tgl_pembelian) = \'2025\'
+AND YEAR(detail_penjualan.tgl_penjualan) = \'2025\'
+GROUP BY `barang`.`kode_barang`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = :MONTH(detail_pembelian.tgl_pembelian):
+AND MONTH(detail_penjualan.tgl_penjualan) = :MONTH(detail_penjualan.tgl_penjualan):
+AND YEAR(detail_pembelian.tgl_pembelian) = :YEAR(detail_pembelian.tgl_pembelian):
+AND YEAR(detail_penjualan.tgl_penjualan) = :YEAR(detail_penjualan.tgl_penjualan):
+GROUP BY `barang`.`kode_barang`', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Pegawai.php(880): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+CRITICAL - 2025-01-09 14:14:44 --> [Caused by] mysqli_sql_exception: Unknown column 'detail_pembelian.tgl_pembelian' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = \'1\'
+AND MONTH(detail_penjualan.tgl_penjualan) = \'1\'
+AND YEAR(detail_pembelian.tgl_pembelian) = \'2025\'
+AND YEAR(detail_penjualan.tgl_penjualan) = \'2025\'
+GROUP BY `barang`.`kode_barang`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = \'1\'
+AND MONTH(detail_penjualan.tgl_penjualan) = \'1\'
+AND YEAR(detail_pembelian.tgl_pembelian) = \'2025\'
+AND YEAR(detail_penjualan.tgl_penjualan) = \'2025\'
+GROUP BY `barang`.`kode_barang`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = \'1\'
+AND MONTH(detail_penjualan.tgl_penjualan) = \'1\'
+AND YEAR(detail_pembelian.tgl_pembelian) = \'2025\'
+AND YEAR(detail_penjualan.tgl_penjualan) = \'2025\'
+GROUP BY `barang`.`kode_barang`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `barang`.*, COALESCE(SUM(detail_pembelian.qty), 0) AS qty_pembelian, COALESCE(SUM(detail_penjualan.qty), 0) AS qty_penjualan
+FROM `barang`
+LEFT JOIN `detail_pembelian` ON `barang`.`kode_barang` = `detail_pembelian`.`kode_barang`
+LEFT JOIN `detail_penjualan` ON `barang`.`kode_barang` = `detail_penjualan`.`kode_barang`
+WHERE MONTH(detail_pembelian.tgl_pembelian) = :MONTH(detail_pembelian.tgl_pembelian):
+AND MONTH(detail_penjualan.tgl_penjualan) = :MONTH(detail_penjualan.tgl_penjualan):
+AND YEAR(detail_pembelian.tgl_pembelian) = :YEAR(detail_pembelian.tgl_pembelian):
+AND YEAR(detail_penjualan.tgl_penjualan) = :YEAR(detail_penjualan.tgl_penjualan):
+GROUP BY `barang`.`kode_barang`', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Pegawai.php(880): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pegawai->laporanStokBulan()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\webTA_inventory3\\public\\index.php')
+INFO - 2025-01-09 14:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:16:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:16:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:17:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:19:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

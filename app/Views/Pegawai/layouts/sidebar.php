@@ -46,7 +46,7 @@
                     </a>
                 </div>
                 <div class="user-panel nav-item mt-2 pb-2 <?= (strpos(uri_string(), 'laporan') !== false) ? 'menu-open' : ''; ?>">
-                    <a href="<?= base_url('Pegawai/stokBarang'); ?>" class="nav-link <?= (uri_string() === 'Pegawai/stokBarang') ? 'active' : ''; ?>">
+                    <a href="#" class="nav-link <?= (uri_string() === 'Pegawai/stokBarang') ? 'active' : ''; ?>">
                         <i class="nav-icon fas fa-boxes"></i>
                         <p>
                             Laporan Stok Barang
