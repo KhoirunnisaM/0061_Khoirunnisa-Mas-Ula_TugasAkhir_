@@ -60,14 +60,13 @@ Edit Pegawai
 </div>
 
 <script>
-    // Fungsi untuk menampilkan preview foto yang dipilih
     function previewImage(event) {
         var reader = new FileReader();
         reader.onload = function() {
             var preview = document.getElementById('preview');
             var previewContainer = document.getElementById('preview-container');
             preview.src = reader.result;
-            previewContainer.style.display = 'block'; // Menampilkan preview
+            previewContainer.style.display = 'block';
         }
         reader.readAsDataURL(event.target.files[0]);
     }

@@ -1,5 +1,4 @@
 <?= $this->extend('Admin/layouts/main') ?>
-
 <?= $this->section('content') ?>
 
 <section class="content-header">
@@ -11,22 +10,33 @@
 
 <section class="content">
 
-  <div class="card bg-info">
+<div class="card bg-info">
     <div class="card-header">
-      <div class="card-title d-flex justify-content-between align-items-center">
-        <span id="current-date" class="ml-auto"></span>
-      </div>
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" title="Calendar">
-          <i class="fas fa-calendar-alt"></i>
-        </button>
-      </div>
+        <h3 class="card-title">Title</h3>
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
     </div>
     <div class="card-body">
-      <h2><i class="icon fas fa-info-circle"></i> Selamat Datang di <b>Aplikasi Persediaan Barang Toko Mebel Sidarta</b></h2>
-      Saat ini Anda login sebagai <b>Administrator</b> dengan level <b>Admin</b>
+        <h2><i class="icon fas fa-info-circle"></i> Selamat Datang di <b>Aplikasi Persediaan Barang Toko Mebel Sidarta</b></h2>
+        <?php
+        $fullname = session()->get('fullname');
+        $level = session()->get('level');
+        $status = ucfirst($fullname);
+
+        if ($fullname === 'Pegawaisatu') {
+            $status = 'Pegawai Kesatu';
+        }
+        ?>
+        Saat ini Anda login sebagai <b><?= $status; ?></b> dengan level <b><?= ucfirst($level); ?></b>.
     </div>
-  </div>
+</div>
+
 
   <div class="row">
     <div class="col-lg-3 col-6">
@@ -87,7 +97,6 @@
 <?= $this->endSection() ?>
 
 <script>
-  // Menampilkan tanggal otomatis dengan format lengkap (tanggal, bulan, tahun)
   const today = new Date();
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   document.getElementById('current-date').textContent = today.toLocaleDateString('id-ID', options);

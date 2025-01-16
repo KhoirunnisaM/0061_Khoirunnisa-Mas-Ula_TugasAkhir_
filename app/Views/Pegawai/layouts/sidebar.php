@@ -1,14 +1,15 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
-    <!-- Sidebar -->
-    <div class="sidebar">
+      <!-- Sidebar -->
+      <div class="sidebar">
         <!-- Sidebar user (optional) -->
         <div class="mt-5 pb-3 mb-3 d-flex justify-content-center align-items-center">
             <div class="image">
-                <img src="<?= base_url(); ?>../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                <img src="<?= base_url('uploads/logo.png') ?>" alt="logo" width="120" height="120" >
             </div>
         </div>
+
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -22,7 +23,7 @@
                     </a>
                 </div>
                 <div class="user-panel nav-item mt-2 pb-2">
-                    <a href="<?= base_url('Pegawai/barang'); ?>" class="nav-link <?= (uri_string() === 'Pegawai/barang' || uri_string() === 'Pegawai/barang/create' || strpos(uri_string(), 'Admin/barang/edit') === 0) ? 'active' : ''; ?>">
+                    <a href="<?= base_url('Pegawai/barang'); ?>" class="nav-link <?= (uri_string() === 'Pegawai/barang' || uri_string() === 'Pegawai/barang/create' || strpos(uri_string(), 'Pegawai/barang/edit') === 0) ? 'active' : ''; ?>">
                         <i class="nav-icon fas fa-cubes"></i>
                         <p>
                             Data Barang

@@ -57,7 +57,7 @@ PANEL ADMIN - Edit Penjualan
 </div>
 
 <script>
-    const barangData = <?= json_encode($barang); ?>; // Data barang aktif dari server
+    const barangData = <?= json_encode($barang); ?>; 
     let cart = <?= json_encode($detailPenjualan); ?>.map(item => ({
         kode: item.kode_barang,
         nama: item.nama_barang,
@@ -65,13 +65,12 @@ PANEL ADMIN - Edit Penjualan
         qty: item.qty
     }));
 
-    let displayedCount = 4; // Jumlah barang yang ditampilkan
+    let displayedCount = 4; 
 
     const barangCardsContainer = document.getElementById('barang-cards');
     const searchInput = document.getElementById('search-barang');
     const showMoreButton = document.getElementById('show-more');
 
-    // Render Barang Cards
     function renderBarang(filteredBarang) {
         barangCardsContainer.innerHTML = '';
         const toShow = filteredBarang.slice(0, displayedCount);
@@ -176,7 +175,6 @@ PANEL ADMIN - Edit Penjualan
         });
     }
 
-    // Event Listeners
     searchInput.addEventListener('input', () => {
         const keyword = searchInput.value.toLowerCase();
         const filteredBarang = barangData.filter(item =>

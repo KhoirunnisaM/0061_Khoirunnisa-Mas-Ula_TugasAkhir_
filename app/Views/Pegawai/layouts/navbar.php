@@ -20,7 +20,7 @@
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="User Avatar" class="img-circle" style="width: 30px; height: 30px;">
-                <span class="ml-2 text-capitalize"><?= session('username') ?></span>
+                <span class="ml-2 text-capitalize"><?= session('fullname') ?></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a href="#" class="dropdown-item" id="logout-btn">

@@ -53,11 +53,11 @@ PANEL ADMIN - Tambah Pegawai
 
         reader.onload = function() {
             preview.src = reader.result;
-            preview.style.display = 'block'; // Menampilkan gambar
+            preview.style.display = 'block'; 
         }
 
         if (event.target.files[0]) {
-            reader.readAsDataURL(event.target.files[0]); // Membaca gambar yang dipilih
+            reader.readAsDataURL(event.target.files[0]);
         }
     }
 </script>

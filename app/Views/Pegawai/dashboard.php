@@ -13,23 +13,33 @@ PANEL Pegawai
 
 <section class="content">
 
-  <div class="card bg-info">
+<div class="card bg-info">
     <div class="card-header">
-      <h3 class="card-title">Title</h3>
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-          <i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
+        <h3 class="card-title">Title</h3>
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
     </div>
     <div class="card-body">
-      <h2><i class="icon fas fa-info-circle"></i> Selamat Datang di <b>Aplikasi Persediaan Barang Toko Mebel Sidarta</b></h2>
-      Saat ini Anda login sebagai <b>Pegawai</b>
+        <h2><i class="icon fas fa-info-circle"></i> Selamat Datang di <b>Aplikasi Persediaan Barang Toko Mebel Sidarta</b></h2>
+        <?php
+        $fullname = session()->get('fullname');
+        $level = session()->get('level');
+        $status = ucfirst($fullname);
+
+        if ($fullname === 'pegawaisatu') {
+            $status = 'Pegawai Kesatu';
+        }
+        ?>
+        Saat ini Anda login sebagai <b><?= $status; ?></b> dengan level <b><?= ucfirst($level); ?></b>.
     </div>
-  </div>
+</div>
+
 
   <div class="row">
     <div class="col-lg-3 col-6">
@@ -41,7 +51,7 @@ PANEL Pegawai
         <div class="icon">
           <i class="ion ion-bag"></i>
         </div>
-        <a href="<?= site_url('Pegawai/supplier'); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        <div class="small-box-footer"> </div>
       </div>
     </div>
 

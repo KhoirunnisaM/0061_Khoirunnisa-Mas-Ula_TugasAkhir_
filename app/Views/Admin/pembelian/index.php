@@ -38,7 +38,7 @@ PANEL ADMIN - Data Pembelian
                 <th>ID Pembelian</th>
                 <th>Tanggal</th>
                 <th>Supplier</th>
-                <th>Jumlah Barang</th>
+                <th>Jumlah Jenis</th>
                 <th>Total Harga</th>
                 <th>Petugas</th>
                 <th>Aksi</th>
@@ -57,7 +57,7 @@ PANEL ADMIN - Data Pembelian
                     <td>
                         <a href="<?= site_url('Admin/pembelian/detail/' . $item['id_pembelian']); ?>" class="btn btn-info btn-sm">Detail</a>
                         <a href="<?= site_url('Admin/pembelian/edit/' . $item['id_pembelian']); ?>" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="<?= site_url('Admin/pembelian/hapus/' . $item['id_pembelian']); ?>" class="btn btn-danger btn-sm delete-btn">Hapus</a>
+                        <button class="btn btn-danger btn-sm delete-btn" data-id="<?= $item['id_pembelian']; ?>">Hapus</button>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -65,6 +65,7 @@ PANEL ADMIN - Data Pembelian
     </table>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     function searchTable() {
         let input = document.getElementById("searchInput");
@@ -92,6 +93,26 @@ PANEL ADMIN - Data Pembelian
             }
         }
     }
+
+    document.querySelectorAll('.delete-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const id = this.getAttribute('data-id');
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: "Data ini akan dihapus secara permanen!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "<?= site_url('Admin/pembelian/hapus/'); ?>" + id;
+                }
+            });
+        });
+    });
 </script>
 
 <?= $this->endSection() ?>

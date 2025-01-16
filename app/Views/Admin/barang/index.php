@@ -3,17 +3,14 @@
 PANEL ADMIN
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
+
 <div class="container mt-5">
-    <!-- Data Barang and Add Button inside the container -->
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h1><i class="nav-icon fas fa-cubes"></i> Data Barang</h1>
         <a href="<?= site_url('Admin/barang/create'); ?>" class="btn btn-primary">Tambah Barang</a>
     </div>
-    <p class="text-danger"><strong>Barang Not Ready</strong> Silakan nota barang di menu pembelian untuk mempersiapkan penjualan</p>
     
-    <!-- Show entries and Search inside the container -->
     <div class="d-flex justify-content-between mb-3">
-        <!-- Show entries -->
         <div>
             <label>Show 
                 <select class="form-select form-select-sm" style="width: auto;">
@@ -24,13 +21,11 @@ PANEL ADMIN
                 </select> entries
             </label>
         </div>
-        <!-- Search -->
         <div>
             <input type="text" id="searchInput" class="form-control form-control-sm" placeholder="Search..." onkeyup="searchTable()">
         </div>
     </div>
     
-    <!-- Table inside the container -->
     <table class="table table-bordered" id="barangTable">
         <thead class="bg-dark text-white">
             <tr>
@@ -51,23 +46,23 @@ PANEL ADMIN
                     <td><?= $b['brand']; ?></td>
                     <td>
                         <?php if ($b['stok'] == null) : ?>
-                            <span class="text-danger">Not Ready</span>
-                        <?php elseif ($b['stok'] > 0) : ?>
+                            <span class="text-danger">Non Aktif</span>
+                        <?php elseif ($b['stok'] >= 0) : ?>
                             <?= $b['stok'] ?>
                         <?php endif; ?>
                     </td>
                     <td>
                         <?php if ($b['harga'] == null) : ?>
-                            <span class="text-danger">Not Ready</span>
-                        <?php elseif ($b['stok'] > 0) : ?>
+                            <span class="text-danger">Non Aktif</span>
+                        <?php elseif ($b['stok'] >= 0) : ?>
                              <?= $b['harga'] ?>
                         <?php endif; ?>
                     </td>
                     <td>
                         <?php if ($b['active'] == 1) : ?>
-                            <span class="text-success">Ready</span>
+                            <span class="text-success">Aktif</span>
                         <?php elseif ($b['active'] == 0) : ?>
-                            <span class="text-danger">Not Ready</span>
+                            <span class="text-danger">Non Aktif</span>
                         <?php endif; ?>
                     </td>
                     <td>
@@ -76,11 +71,10 @@ PANEL ADMIN
                         <script>
                             document.querySelectorAll('.delete-btn').forEach(function(button) {
                                 button.addEventListener('click', function(event) {
-                                    event.preventDefault(); // Mencegah link untuk langsung mengarah ke URL
+                                    event.preventDefault();
 
-                                    const url = this.getAttribute('href'); // Ambil URL penghapusan
+                                    const url = this.getAttribute('href'); 
 
-                                    // Tampilkan SweetAlert konfirmasi
                                     Swal.fire({
                                         title: 'Apakah Anda yakin?',
                                         text: 'Data barang ini akan dihapus!',
@@ -92,7 +86,6 @@ PANEL ADMIN
                                         cancelButtonText: 'Batal'
                                     }).then((result) => {
                                         if (result.isConfirmed) {
-                                            // Jika pengguna mengonfirmasi, arahkan ke URL penghapusan
                                             window.location.href = url;
                                         }
                                     });

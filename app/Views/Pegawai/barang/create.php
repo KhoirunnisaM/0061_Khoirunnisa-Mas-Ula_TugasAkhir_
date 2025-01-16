@@ -1,12 +1,12 @@
 <?= $this->extend('Admin/layouts/main') ?>
 <?= $this->section('title') ?>
-PANEL ADMIN - Tambah Barang
+PANEL PEGAWAI - Tambah Barang
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
 <div class="container mt-5">
     <h1>Tambah Barang</h1>
-    <form action="<?= site_url('Admin/barang/store'); ?>" method="POST">
+    <form action="<?= site_url('Pegawai/barang/store'); ?>" method="POST">
         <?= csrf_field(); ?>
 
         <div class="form-group">
@@ -24,7 +24,7 @@ PANEL ADMIN - Tambah Barang
             <input type="text" class="form-control" id="brand" name="brand" required>
         </div>
         <button type="submit" class="btn btn-primary">Simpan</button>
-        <a href="<?= site_url('Admin/barang'); ?>" class="btn btn-secondary">Kembali</a>
+        <a href="<?= site_url('Pegawai/barang'); ?>" class="btn btn-secondary">Kembali</a>
     </form>
 </div>
 

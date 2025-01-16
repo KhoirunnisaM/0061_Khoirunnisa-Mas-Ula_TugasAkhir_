@@ -55,11 +55,10 @@ PANEL ADMIN - Data Supplier
                         <script>
                             document.querySelectorAll('.delete-btn').forEach(function(button) {
                                 button.addEventListener('click', function(event) {
-                                    event.preventDefault(); // Mencegah link untuk langsung mengarah ke URL
+                                    event.preventDefault(); 
 
-                                    const url = this.getAttribute('href'); // Ambil URL penghapusan
+                                    const url = this.getAttribute('href'); 
 
-                                    // Tampilkan SweetAlert konfirmasi
                                     Swal.fire({
                                         title: 'Apakah Anda yakin?',
                                         text: 'Data supplier ini akan dihapus!',
@@ -71,7 +70,6 @@ PANEL ADMIN - Data Supplier
                                         cancelButtonText: 'Batal'
                                     }).then((result) => {
                                         if (result.isConfirmed) {
-                                            // Jika pengguna mengonfirmasi, arahkan ke URL penghapusan
                                             window.location.href = url;
                                         }
                                     });

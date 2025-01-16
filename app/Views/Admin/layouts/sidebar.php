@@ -6,7 +6,7 @@
         <!-- Sidebar user (optional) -->
         <div class="mt-5 pb-3 mb-3 d-flex justify-content-center align-items-center">
             <div class="image">
-                <img src="https://cdn-icons-png.flaticon.com/128/10469/10469224.png" alt="logo">
+                <img src="<?= base_url('uploads/logo.png') ?>" alt="logo" width="120" height="120" >
             </div>
         </div>
 

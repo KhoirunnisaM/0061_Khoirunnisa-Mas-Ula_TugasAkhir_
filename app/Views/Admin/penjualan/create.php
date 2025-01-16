@@ -54,15 +54,14 @@ PANEL ADMIN - Tambah Penjualan
 </div>
 
 <script>
-    const barangData = <?= json_encode($barang); ?>; // Data barang aktif dari server
-    let displayedCount = 4; // Jumlah barang yang ditampilkan awalnya
+    const barangData = <?= json_encode($barang); ?>; 
+    let displayedCount = 4; 
     const cart = [];
 
     const barangCardsContainer = document.getElementById('barang-cards');
     const searchInput = document.getElementById('search-barang');
     const showMoreButton = document.getElementById('show-more');
 
-    // Render barang berdasarkan filter
     function renderBarang(filteredBarang) {
         barangCardsContainer.innerHTML = '';
         const toShow = filteredBarang.slice(0, displayedCount);
@@ -86,11 +85,9 @@ PANEL ADMIN - Tambah Penjualan
             barangCardsContainer.appendChild(card);
         });
 
-        // Show or hide the "Show More" button
         showMoreButton.style.display = filteredBarang.length > displayedCount ? 'block' : 'none';
     }
 
-    // Tambah barang ke keranjang
     function addToCart(kode, nama, harga) {
         const existingItem = cart.find(item => item.kode === kode);
         if (existingItem) {
@@ -106,15 +103,14 @@ PANEL ADMIN - Tambah Penjualan
         renderCart();
     }
 
-    // Render keranjang
     function renderCart() {
         const tbody = document.querySelector('#cart-table tbody');
         tbody.innerHTML = '';
         let total = 0;
 
         cart.forEach((item, index) => {
-            const subtotal = item.harga * item.qty; // Hitung subtotal berdasarkan qty
-            total += subtotal; // Tambahkan subtotal ke total
+            const subtotal = item.harga * item.qty; 
+            total += subtotal;
 
             tbody.innerHTML += `
         <tr>
@@ -132,50 +128,43 @@ PANEL ADMIN - Tambah Penjualan
         `;
         });
 
-        // Update total harga
         document.getElementById('total_harga').value = total;
 
-        // Event listeners untuk input qty
         document.querySelectorAll('.qty-input').forEach(input => {
             input.addEventListener('input', (e) => {
                 const index = e.target.getAttribute('data-index');
                 const qtyValue = parseInt(e.target.value);
 
-                // Pastikan qty valid (minimal 1)
                 if (qtyValue && qtyValue >= 1) {
                     cart[index].qty = qtyValue;
-                    // Update hidden input untuk qty
                     const hiddenQtyInput = document.querySelector(`input.qty-hidden[name="barang[${index}][qty]"]`);
                     if (hiddenQtyInput) {
                         hiddenQtyInput.value = qtyValue;
                     }
-                    renderCart(); // Render ulang keranjang untuk update subtotal
+                    renderCart(); 
                 }
             });
         });
 
-        // Event listeners untuk tombol hapus
         document.querySelectorAll('.btn-remove').forEach(button => {
             button.addEventListener('click', (e) => {
                 const index = e.target.getAttribute('data-index');
-                cart.splice(index, 1); // Hapus item dari cart
-                renderCart(); // Render ulang keranjang
+                cart.splice(index, 1); 
+                renderCart(); 
             });
         });
     }
 
-    // Filter barang berdasarkan pencarian
     searchInput.addEventListener('input', () => {
         const keyword = searchInput.value.toLowerCase();
         const filteredBarang = barangData.filter(item =>
             item.nama_barang.toLowerCase().includes(keyword) ||
             (item.brand && item.brand.toLowerCase().includes(keyword))
         );
-        displayedCount = 4; // Reset displayed count when searching
+        displayedCount = 4; 
         renderBarang(filteredBarang);
     });
 
-    // Tampilkan lebih banyak barang
     showMoreButton.addEventListener('click', () => {
         displayedCount += 4;
         renderBarang(barangData.filter(item =>
@@ -183,7 +172,6 @@ PANEL ADMIN - Tambah Penjualan
         ));
     });
 
-    // Event delegation untuk tombol tambah barang
     barangCardsContainer.addEventListener('click', (e) => {
         if (e.target.classList.contains('btn-add-barang')) {
             const button = e.target;
@@ -194,7 +182,6 @@ PANEL ADMIN - Tambah Penjualan
         }
     });
 
-    // Inisialisasi tampilan barang
     renderBarang(barangData);
 </script>
 

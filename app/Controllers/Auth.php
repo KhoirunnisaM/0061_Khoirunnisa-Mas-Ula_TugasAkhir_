@@ -24,30 +24,25 @@ class Auth extends BaseController
             $userModel = new Users();
             $user = $userModel->where('username', $username)->first();
 
-            // Validasi username
             if (!$user) {
                 return redirect()->back()->with('error', 'Username tidak terdaftar.');
             }
 
-            // Validasi password
             if ($user && !password_verify($password, $user['password'])) {
                 return redirect()->back()->with('error', 'Password yang dimasukkan salah.');
             }
 
-            // Update kolom last_login
             $userModel->update($user['id_user'], [
                 'last_login' => date('Y-m-d H:i:s')
             ]);
 
-            // Jika validasi berhasil, set session data
             session()->set([
                 'id_user' => $user['id_user'],
-                'username' => $user['username'],
+                'fullname' => $user['fullname'],
                 'level' => $user['level'],
-                'isLoggedIn' => true,
+                'isLoggedIn' => true
             ]);
 
-            // Redirect berdasarkan level user
             if ($user['level'] === 'admin') {
                 return redirect()->to('/Admin/dashboard')->with('success', 'Login berhasil! Selamat datang, Admin.');
             } elseif ($user['level'] === 'pegawai') {
@@ -55,16 +50,13 @@ class Auth extends BaseController
             }
         }
 
-        // Load the login view
         return view('Views/Admin/dashboard');
     }
 
     public function logout()
     {
-        // Destroy the session
         session()->destroy();
 
-        // Redirect to the login page
         return redirect()->to('/')->with('message', 'You have been logged out.');
     }
 }

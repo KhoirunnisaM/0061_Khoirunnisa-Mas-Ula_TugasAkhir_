@@ -76,7 +76,7 @@ PANEL ADMIN - Tambah Pembelian
     document.getElementById('barang-wrapper').addEventListener('input', calculateTotal);
 
     function calculateTotal() {
-        let total = 0;
+        let total = 0;  
         document.querySelectorAll('.barang-item').forEach(function(item) {
             const qty = parseFloat(item.querySelector('.barang-qty').value) || 0;
             const price = parseFloat(item.querySelector('.barang-price').value) || 0;

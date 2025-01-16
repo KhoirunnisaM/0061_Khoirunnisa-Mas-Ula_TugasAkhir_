@@ -57,7 +57,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        // SweetAlert for Success
+        
         <?php if (session()->getFlashdata('success')) : ?>
             Swal.fire({
                 icon: 'success',
@@ -66,7 +66,6 @@
             });
         <?php endif; ?>
 
-        // SweetAlert for Error
         <?php if (session()->getFlashdata('error')) : ?>
             Swal.fire({
                 icon: 'error',
@@ -81,7 +80,7 @@
             <!-- Icon -->
             <div class="icon-circle">
                 <i class="bi bi-cash-register"></i>
-                <img src="https://cdn-icons-png.flaticon.com/128/10469/10469224.png" alt="logo">
+                <img src="<?= base_url('uploads/logo.png') ?>" alt="logo" width="120" height="120" >
             </div>
             <!-- Title -->
             <h1 class="h4">APLIKASI PERSEDIAAN BARANG</h1>

@@ -1,7 +1,7 @@
-<?= $this->extend('Admin/layouts/main') ?>
+<?= $this->extend('Pegawai/layouts/main') ?>
 
 <?= $this->section('title') ?>
-Edit Barang
+PANEL PEGAWAI - Edit Barang
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -9,7 +9,7 @@ Edit Barang
     <h1>Edit Barang</h1>
 
     <!-- Form Edit Barang -->
-    <form action="<?= site_url('Admin/barang/edit/' . $barang['kode_barang']); ?>" method="POST">
+    <form action="<?= site_url('Pegawai/barang/edit/' . $barang['kode_barang']); ?>" method="POST">
         <?= csrf_field(); ?>
 
         <div class="form-group">
@@ -28,7 +28,7 @@ Edit Barang
         </div>
 
         <button type="submit" class="btn btn-primary">Update Barang</button>
-        <a href="<?= site_url('Admin/barang'); ?>" class="btn btn-secondary">Kembali</a>
+        <a href="<?= site_url('Pegawai/barang'); ?>" class="btn btn-secondary">Kembali</a>
 
     </form>
 </div>

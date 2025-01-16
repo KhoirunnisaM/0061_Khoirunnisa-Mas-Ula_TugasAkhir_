@@ -13,3 +13,4 @@ class Barang extends Model
     // Dates
     protected $useTimestamps = false;
 }
+ 

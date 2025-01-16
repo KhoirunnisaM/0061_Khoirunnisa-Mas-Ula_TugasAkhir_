@@ -56,7 +56,7 @@ $routes->group('Admin', ['filter' => 'level:admin'], function ($routes) {
     $routes->get('penjualan/hapus/(:any)', 'Admin::hapusPenjualan/$1');
     $routes->get('penjualan/detail/(:any)', 'Admin::detailPenjualan/$1');
 
-    // laporan stok barang bulanan
+    // laporan stok barang bulanan 
     $routes->get('laporan/stok-bulanan', 'Admin::laporanStokBulan');
     $routes->post('laporan/cariStok', 'Admin::cariStok');
     $routes->get('laporan/cetakStok', 'Admin::cetakStok');
@@ -79,7 +79,7 @@ $routes->group('Pegawai', ['filter' => 'level:pegawai'], function ($routes) {
     $routes->get('barang/create', 'Pegawai::tambahBarang');
     $routes->post('barang/store', 'Pegawai::tambahBarang');
     $routes->get('barang/edit/(:any)', 'Pegawai::editBarang/$1');
-    $routes->post('barang/edit/(:any)', 'Pegawai::editBarang/$1');
+    $routes->post('barang/edit/(:any)', 'Pegawai::editBarang/$1'); 
     $routes->get('barang/hapus/(:any)', 'Pegawai::hapusBarang/$1');
 
     // pembelian

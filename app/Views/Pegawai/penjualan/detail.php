@@ -1,6 +1,6 @@
 <?= $this->extend('Pegawai/layouts/main') ?>
 <?= $this->section('title') ?>
-Detail Penjualan
+PANEL PEGAWAI - Detail Penjualan
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>

@@ -38,7 +38,7 @@ PANEL ADMIN - Data Penjualan
                 <th>ID Penjualan</th>
                 <th>Tanggal Penjualan</th>
                 <th>Nama Pembeli</th>
-                <th>Jumlah Barang</th>
+                <th>Jumlah Jenis</th>
                 <th>Total Harga</th>
                 <th>Petugas</th>
                 <th>Aksi</th>
@@ -111,7 +111,6 @@ PANEL ADMIN - Data Penjualan
                     cancelButtonText: 'Batal'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        // Redirect ke URL untuk menghapus data
                         window.location.href = deleteUrl;
                     }
                 });

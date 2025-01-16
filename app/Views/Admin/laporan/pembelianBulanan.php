@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 
 <div class="container mt-3">
-    <h3>Laporan Bulanan Pembelian Barang</h3>
+    <h1><i class="nav-icon fas fa-boxes"></i>  Bulanan Pembelian Barang</h1>
     <form method="get" action="<?= base_url('Admin/cetakLaporanPembelian') ?>" target="_blank">
         <div class="row mb-4">
             <div class="col-md-3">
@@ -32,7 +32,8 @@
 
 
     <table class="table table-bordered" id="dataTable">
-        <thead>
+    <thead class="bg-dark text-white">
+
             <tr>
                 <th>#</th>
                 <th>Tanggal</th>

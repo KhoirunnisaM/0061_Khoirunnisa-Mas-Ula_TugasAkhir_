@@ -28,7 +28,6 @@ class Admin extends BaseController
 
     public function __construct()
     {
-        // Inisialisasi model yang akan digunakan
         $this->supplierModel = new Supplier();
         $this->barangModel = new Barang();
         $this->detailPenjualanModel = new DetailPenjualan();
@@ -36,19 +35,11 @@ class Admin extends BaseController
 
     public function dashboard()
     {
-        // Mengambil data total supplier
         $data['totalSupplier'] = $this->supplierModel->countAllResults();
-
-        // Mengambil data total barang
         $data['totalBarang'] = $this->barangModel->countAllResults();
-
-        // Mengambil data total stok barang
         $data['totalStokBarang'] = $this->barangModel->selectSum('stok')->get()->getRow()->stok;
-
-        // Mengambil data total barang terjual
         $data['totalBarangTerjual'] = $this->detailPenjualanModel->selectSum('qty')->get()->getRow()->qty;
 
-        // Memuat view dashboard dengan data
         return view('Admin/dashboard', $data);
     }
 
@@ -101,12 +92,10 @@ class Admin extends BaseController
         $barangModel = new Barang();
         $barang = $barangModel->find($id);
 
-        // Jika barang tidak ditemukan, redirect ke halaman barang
         if (!$barang) {
             return redirect()->to('/Admin/barang')->with('error', 'Barang tidak ditemukan.');
         }
 
-        // Proses jika form disubmit
         if ($this->request->getMethod() === 'POST') {
             // Ambil data dari form
             $data = [
@@ -130,15 +119,12 @@ class Admin extends BaseController
         $barangModel = new Barang();
         $barang = $barangModel->find($id);
 
-        // Jika barang tidak ditemukan, redirect ke halaman barang
         if (!$barang) {
             return redirect()->to('/Admin/barang')->with('error', 'Barang tidak ditemukan.');
         }
 
-        // Hapus data barang
         $barangModel->delete($id);
 
-        // Redirect ke halaman barang dengan pesan sukses
         return redirect()->to('/Admin/barang')->with('success', 'Barang berhasil dihapus.');
     }
 
@@ -165,10 +151,8 @@ class Admin extends BaseController
         if ($this->request->getMethod() === 'POST') {
             $UsersModel = new Users();
 
-            // Ambil data dari form
             $username = $this->request->getPost('username');
 
-            // Cek apakah username sudah ada
             if ($UsersModel->where('username', $username)->first()) {
                 return redirect()->back()->with('error', 'Username sudah terdaftar. Silakan pilih username lain.');
             }
@@ -176,30 +160,25 @@ class Admin extends BaseController
             $foto = $this->request->getFile('foto');
             $fotoName = null;
 
-            // Cek apakah ada file yang diupload
             if ($foto && $foto->isValid() && !$foto->hasMoved()) {
-                // Membuat nama file unik
                 $fotoName = $foto->getRandomName();
 
-                // Pindahkan file ke folder 'public/uploads/'
                 $foto->move(FCPATH . 'uploads', $fotoName);
             }
 
             $data = [
                 'username'  => $username,
-                'password'  => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT), // Hash password
+                'password'  => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT), 
                 'fullname'  => $this->request->getPost('fullname'),
                 'alamat'    => $this->request->getPost('alamat'),
                 'hp'        => $this->request->getPost('hp'),
-                'foto'      => $fotoName,  // Simpan nama file foto
+                'foto'      => $fotoName, 
                 'level'     => 'pegawai',
                 'active'    => 1,
             ];
 
-            // Simpan data ke database
             $UsersModel->insert($data);
 
-            // Redirect ke halaman Users
             return redirect()->to('/Admin/pegawai')->with('success', 'Pegawai berhasil ditambahkan.');
         }
 
@@ -216,46 +195,38 @@ class Admin extends BaseController
         }
 
         if ($this->request->getMethod() === 'POST') {
-            // Ambil data dari form
             $username = $this->request->getPost('username');
 
-            // Cek apakah username sudah ada, kecuali untuk username yang sedang diedit
             if ($UsersModel->where('username', $username)->where('id_user !=', $id_user)->first()) {
                 return redirect()->back()->with('error', 'Username sudah terdaftar. Silakan pilih username lain.');
             }
 
             $foto = $this->request->getFile('foto');
-            $fotoName = $user['foto']; // Jika tidak ada perubahan foto, gunakan foto lama
+            $fotoName = $user['foto'];
 
-            // Cek apakah ada file yang diupload
             if ($foto && $foto->isValid() && !$foto->hasMoved()) {
-                // Hapus foto lama jika ada
                 if ($fotoName && file_exists(FCPATH . 'uploads/' . $fotoName)) {
-                    unlink(FCPATH . 'uploads/' . $fotoName); // Hapus foto lama
+                    unlink(FCPATH . 'uploads/' . $fotoName); 
                 }
 
-                // Membuat nama file unik
                 $fotoName = $foto->getRandomName();
 
-                // Pindahkan file ke folder 'public/uploads/'
                 $foto->move(FCPATH . 'uploads', $fotoName);
             }
 
             $data = [
                 'username'  => $username,
-                'password'  => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT), // Hash password
+                'password'  => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
                 'fullname'  => $this->request->getPost('fullname'),
                 'alamat'    => $this->request->getPost('alamat'),
                 'hp'        => $this->request->getPost('hp'),
-                'foto'      => $fotoName,  // Simpan nama file foto
+                'foto'      => $fotoName, 
                 'level'     => 'pegawai',
                 'active'    => 1,
             ];
 
-            // Update data ke database
             $UsersModel->update($id_user, $data);
 
-            // Redirect ke halaman Users
             return redirect()->to('/Admin/pegawai')->with('success', 'Pegawai berhasil diperbarui.');
         }
 
@@ -267,15 +238,12 @@ class Admin extends BaseController
         $pegawaiModel = new Users();
         $barang = $pegawaiModel->find($id);
 
-        // Jika barang tidak ditemukan, redirect ke halaman barang
         if (!$barang) {
             return redirect()->to('/Admin/pegawai')->with('error', 'Data tidak ditemukan.');
         }
 
-        // Hapus data barang
         $pegawaiModel->delete($id);
 
-        // Redirect ke halaman barang dengan pesan sukses
         return redirect()->to('/Admin/pegawai')->with('success', 'Data berhasil dihapus.');
     }
 
@@ -292,10 +260,8 @@ class Admin extends BaseController
         if ($this->request->getMethod() === 'POST') {
             $supplierModel = new Supplier();
 
-            // Ambil data dari form
             $nama_supplier = $this->request->getPost('nama_supplier');
 
-            // Cek apakah nama supplier sudah ada
             if ($supplierModel->where('nama_supplier', $nama_supplier)->first()) {
                 return redirect()->back()->with('error', 'Nama supplier sudah terdaftar. Silakan pilih nama lain.');
             }
@@ -307,10 +273,8 @@ class Admin extends BaseController
                 'telp'          => $this->request->getPost('hp'),
             ];
 
-            // Simpan data ke database
             $supplierModel->insert($data);
 
-            // Redirect ke halaman supplier
             return redirect()->to('/Admin/supplier')->with('success', 'Supplier berhasil ditambahkan.');
         }
 
@@ -321,7 +285,6 @@ class Admin extends BaseController
     {
         $supplierModel = new Supplier();
 
-        // Ambil data supplier berdasarkan ID
         $data['supplier'] = $supplierModel->find($id_supplier);
 
         if (!$data['supplier']) {
@@ -329,17 +292,14 @@ class Admin extends BaseController
         }
 
         if ($this->request->getMethod() === 'POST') {
-            // Ambil data dari form
             $dataUpdate = [
                 'nama_supplier' => $this->request->getPost('nama_supplier'),
                 'alamat'        => $this->request->getPost('alamat'),
                 'telp'          => $this->request->getPost('telp'),
             ];
 
-            // Update data supplier
             $supplierModel->update($id_supplier, $dataUpdate);
 
-            // Redirect ke halaman supplier
             return redirect()->to('/Admin/supplier')->with('success', 'Supplier berhasil diperbarui.');
         }
 
@@ -360,6 +320,15 @@ class Admin extends BaseController
         return redirect()->to('/Admin/supplier')->with('success', 'Data berhasil dihapus.');
     }
 
+    public function searchSupplier()
+    {
+        $keyword = $this->request->getPost('keyword');
+        $supplierModel = new Supplier();
+        $data['supplier'] = $supplierModel->like('nama_supplier', $keyword)->findAll();
+        return view('admin/supplier', $data);
+    }
+
+    //Users
     public function detailUsers($id)
     {
         $UsersModel = new Users();
@@ -417,23 +386,15 @@ class Admin extends BaseController
         }
     }
 
-    public function searchSupplier()
-    {
-        $keyword = $this->request->getPost('keyword');
-        $supplierModel = new Supplier();
-        $data['supplier'] = $supplierModel->like('nama_supplier', $keyword)->findAll();
-        return view('admin/supplier', $data);
-    }
 
     // Pembelian
     public function pembelian()
     {
         $db = \Config\Database::connect();
 
-        // Query untuk mendapatkan data pembelian dengan informasi tambahan
         $query = $db->table('pembelian')
             ->select('pembelian.id_pembelian, pembelian.tgl_pembelian, supplier.nama_supplier, user.fullname as nama_user, 
-                      SUM(detail_pembelian.qty) as total_qty, SUM(detail_pembelian.qty * detail_pembelian.harga) as total_harga')
+                      COUNT(detail_pembelian.kode_barang) as total_qty, SUM(detail_pembelian.qty * detail_pembelian.harga) as total_harga')
             ->join('supplier', 'pembelian.id_supplier = supplier.id_supplier', 'left')
             ->join('user', 'pembelian.id_user = user.id_user', 'left')
             ->join('detail_pembelian', 'pembelian.id_pembelian = detail_pembelian.id_pembelian', 'left')
@@ -454,24 +415,21 @@ class Admin extends BaseController
             $pembelianModel = new Pembelian();
             $detailPembelianModel = new DetailPembelian();
 
-            // Tentukan zona waktu Jakarta
             date_default_timezone_set('Asia/Jakarta');
             $currentDate = date('d-m-Y-His');
-            $idPembelian = "ID-" . $currentDate;
+            $idPembelian = "ID" . date('dmYHis');
 
             $pembelianData = [
                 'id_pembelian' => $idPembelian,
-                'tgl_pembelian' => $this->request->getPost('tgl_pembelian'),
+                'tgl_pembelian' => date('Y-m-d H:i:s'),
                 'id_supplier' => $this->request->getPost('id_supplier'),
                 'id_user' => session('id_user')
             ];
 
-            // Simpan data pembelian
             $pembelianModel->insert($pembelianData);
 
             $barangList = $this->request->getPost('barang');
             foreach ($barangList as $barang) {
-                // Simpan detail pembelian
                 $detailPembelianModel->insert([
                     'id_pembelian' => $idPembelian,
                     'kode_barang' => $barang['kode_barang'],
@@ -479,7 +437,6 @@ class Admin extends BaseController
                     'harga' => $barang['harga']
                 ]);
 
-                // Update barang stock dan harga
                 $currentBarang = $barangModel->find($barang['kode_barang']);
                 $updatedStock = $currentBarang['stok'] + $barang['qty'];
 
@@ -507,7 +464,7 @@ class Admin extends BaseController
 
         $data['pembelian'] = $pembelianModel->find($id);
         $data['detailPembelian'] = $detailPembelianModel->where('id_pembelian', $id)->findAll();
-        $data['barangModel'] = $barangModel; // Tambahkan ini
+        $data['barangModel'] = $barangModel; 
 
         return view('admin/pembelian/detail', $data);
     }
@@ -540,10 +497,8 @@ class Admin extends BaseController
 
         $pembelianModel->update($id, $pembelianData);
 
-        // Hapus detail pembelian lama
         $detailPembelianModel->where('id_pembelian', $id)->delete();
 
-        // Tambah detail pembelian baru
         $barangList = $this->request->getPost('barang');
         foreach ($barangList as $barang) {
             $detailPembelianModel->insert([
@@ -553,7 +508,6 @@ class Admin extends BaseController
                 'harga' => $barang['harga'],
             ]);
 
-            // Update stok barang
             $currentBarang = $barangModel->find($barang['kode_barang']);
             $updatedStock = $currentBarang['stok'] + $barang['qty'];
             $barangModel->update($barang['kode_barang'], ['stok' => $updatedStock]);
@@ -566,7 +520,7 @@ class Admin extends BaseController
     {
         $pembelianModel = new Pembelian();
         $pembelianModel->delete($id);
-        return redirect()->to('/Admin/pembelian');
+        return redirect()->to('/Admin/pembelian')->with('success', 'Pembelian berhasil dihapus.');
     }
 
     public function searchPembelian()
@@ -582,7 +536,6 @@ class Admin extends BaseController
     {
         $db = \Config\Database::connect();
 
-        // Query untuk mendapatkan data penjualan dengan informasi tambahan
         $query = $db->table('penjualan')
             ->select('penjualan.id_penjualan, penjualan.tgl_penjualan, penjualan.nama_pembeli, user.fullname as nama_user, 
                       COUNT(detail_penjualan.kode_barang) as jumlah_barang, 
@@ -605,16 +558,13 @@ class Admin extends BaseController
             $penjualanModel = new Penjualan();
             $detailPenjualanModel = new DetailPenjualan();
 
-            // Set zona waktu ke Jakarta
             date_default_timezone_set('Asia/Jakarta');
 
-            // Generate ID Penjualan unik
             $idPenjualan = 'FP' . date('dmYHis');
 
-            // Data penjualan
             $penjualanData = [
                 'id_penjualan' => $idPenjualan,
-                'tgl_penjualan' => date('Y-m-d H:i:s'), // Format tanggal penjualan dengan zona waktu Jakarta
+                'tgl_penjualan' => date('Y-m-d H:i:s'), 
                 'nama_pembeli' => $this->request->getPost('nama_pembeli'),
                 'id_user' => session('id_user'),
             ];
@@ -625,11 +575,10 @@ class Admin extends BaseController
                 log_message('error', "Gagal menyimpan penjualan: " . json_encode($penjualanData));
             }
 
-            // Data barang dari form
             $barangList = $this->request->getPost('barang');
             if (is_array($barangList) && !empty($barangList)) {
                 foreach ($barangList as $barang) {
-                    // Detail penjualan
+                   
                     $detailData = [
                         'id_penjualan' => $idPenjualan,
                         'kode_barang' => $barang['kode_barang'],
@@ -643,7 +592,6 @@ class Admin extends BaseController
                         log_message('error', "Gagal menyimpan detail penjualan: " . json_encode($detailData));
                     }
 
-                    // Update stok barang
                     $currentBarang = $barangModel->find($barang['kode_barang']);
                     if ($currentBarang) {
                         $updatedStock = $currentBarang['stok'] - $barang['qty'];
@@ -663,7 +611,6 @@ class Admin extends BaseController
             return redirect()->to('/Admin/penjualan')->with('success', 'Penjualan berhasil ditambahkan.');
         }
 
-        // Filter barang hanya dengan active = 1
         $data['barang'] = $barangModel->where('active', 1)->findAll();
         $data['users'] = $userModel->findAll();
 
@@ -675,22 +622,20 @@ class Admin extends BaseController
         $penjualanModel = new Penjualan();
         $detailPenjualanModel = new DetailPenjualan();
 
-        // Ambil data penjualan berdasarkan ID
         $penjualan = $penjualanModel
             ->select('penjualan.*, user.fullname as nama_user')
             ->join('user', 'penjualan.id_user = user.id_user', 'left')
-            ->where('penjualan.id_penjualan', $id) // Pastikan kolom 'id_penjualan' digunakan
+            ->where('penjualan.id_penjualan', $id) 
             ->first();
 
         if (!$penjualan) {
             return redirect()->to('/Admin/penjualan')->with('error', 'Penjualan tidak ditemukan.');
         }
 
-        // Ambil detail penjualan
         $detailPenjualan = $detailPenjualanModel
             ->select('detail_penjualan.*, barang.nama_barang')
             ->join('barang', 'detail_penjualan.kode_barang = barang.kode_barang', 'left')
-            ->where('detail_penjualan.id_penjualan', $id) // Gunakan kolom 'id_penjualan'
+            ->where('detail_penjualan.id_penjualan', $id) 
             ->findAll();
 
         $data = [
@@ -707,14 +652,12 @@ class Admin extends BaseController
         $detailPenjualanModel = new DetailPenjualan();
         $barangModel = new Barang();
 
-        // Pastikan menggunakan id_penjualan
         $penjualan = $penjualanModel->where('id_penjualan', $id)->first();
 
         if (!$penjualan) {
             return redirect()->to('/Admin/penjualan')->with('error', 'Penjualan tidak ditemukan.');
         }
 
-        // Ambil detail penjualan dengan informasi barang
         $detailPenjualan = $detailPenjualanModel
             ->select('detail_penjualan.*, barang.nama_barang, barang.stok')
             ->join('barang', 'barang.kode_barang = detail_penjualan.kode_barang', 'left')
@@ -736,26 +679,22 @@ class Admin extends BaseController
         $detailPenjualanModel = new DetailPenjualan();
         $barangModel = new Barang();
 
-        // Data yang akan diperbarui
         $penjualanData = [
             'nama_pembeli' => $this->request->getPost('nama_pembeli'),
             'id_user' => session('id_user'),
         ];
 
-        // Update data penjualan (hanya nama_pembeli dan id_user)
         if (!$penjualanModel->update($id, $penjualanData)) {
             log_message('error', "Gagal memperbarui penjualan: " . json_encode($penjualanData));
             return redirect()->back()->withInput()->with('error', 'Gagal memperbarui data penjualan.');
         }
 
-        // Ambil detail penjualan lama
         $oldDetails = $detailPenjualanModel->where('id_penjualan', $id)->findAll();
         $oldDetailsMap = [];
         foreach ($oldDetails as $detail) {
             $oldDetailsMap[$detail['kode_barang']] = $detail;
         }
 
-        // Ambil barang baru dari request
         $barangList = $this->request->getPost('barang');
         if (!is_array($barangList) || empty($barangList)) {
             log_message('error', "Barang list kosong atau tidak valid: " . json_encode($barangList));
@@ -835,7 +774,6 @@ class Admin extends BaseController
             $detailPenjualanModel->where('id_penjualan', $id)->where('kode_barang', $kodeBarang)->delete();
         }
 
-        // Jika tidak ada perubahan, tampilkan pesan
         if (!$isUpdated) {
             return redirect()->to('/Admin/penjualan')->with('success', 'Tidak ada perubahan pada penjualan.');
         }
@@ -856,7 +794,6 @@ class Admin extends BaseController
         $detailPenjualanModel = new DetailPenjualan();
         $detailPembelianModel = new DetailPembelian();
 
-        // Ambil semua data penjualan
         $penjualan = $detailPenjualanModel
             ->select('barang.kode_barang, barang.nama_barang, barang.brand, barang.stok, SUM(detail_penjualan.qty) as total_qty_penjualan')
             ->join('barang', 'barang.kode_barang = detail_penjualan.kode_barang')
@@ -864,7 +801,6 @@ class Admin extends BaseController
             ->groupBy('barang.kode_barang')
             ->findAll();
 
-        // Ambil semua data pembelian
         $pembelian = $detailPembelianModel
             ->select('barang.kode_barang, barang.nama_barang, barang.brand, barang.stok, SUM(detail_pembelian.qty) as total_qty_pembelian')
             ->join('barang', 'barang.kode_barang = detail_pembelian.kode_barang')
@@ -872,7 +808,6 @@ class Admin extends BaseController
             ->groupBy('barang.kode_barang')
             ->findAll();
 
-        // Gabungkan data penjualan dan pembelian
         $data = [];
 
         foreach ($penjualan as $p) {
@@ -883,7 +818,7 @@ class Admin extends BaseController
                 'brand' => $p['brand'],
                 'stok' => $p['stok'],
                 'qty_penjualan' => $p['total_qty_penjualan'],
-                'qty_pembelian' => 0, // Default 0
+                'qty_pembelian' => 0, 
             ];
         }
 
@@ -897,7 +832,7 @@ class Admin extends BaseController
                     'nama_barang' => $p['nama_barang'],
                     'brand' => $p['brand'],
                     'stok' => $p['stok'],
-                    'qty_penjualan' => 0, // Default 0
+                    'qty_penjualan' => 0, 
                     'qty_pembelian' => $p['total_qty_pembelian'],
                 ];
             }
@@ -913,14 +848,11 @@ class Admin extends BaseController
         $detailPenjualanModel = new DetailPenjualan();
         $detailPembelianModel = new DetailPembelian();
 
-        // Ambil filter bulan dan tahun dari request
         $bulan = $this->request->getPost('bulan');
         $tahun = $this->request->getPost('tahun');
 
-        // Ambil data barang
         $barangData = $barangModel->findAll();
 
-        // Ambil data penjualan dan pembelian berdasarkan bulan dan tahun
         $penjualan = $detailPenjualanModel
             ->select('kode_barang, SUM(qty) as total_qty')
             ->join('penjualan', 'detail_penjualan.id_penjualan = penjualan.id_penjualan')
@@ -937,7 +869,6 @@ class Admin extends BaseController
             ->groupBy('kode_barang')
             ->findAll();
 
-        // Buat mapping data penjualan dan pembelian
         $penjualanMap = [];
         foreach ($penjualan as $p) {
             $penjualanMap[$p['kode_barang']] = $p['total_qty'];
@@ -948,7 +879,6 @@ class Admin extends BaseController
             $pembelianMap[$p['kode_barang']] = $p['total_qty'];
         }
 
-        // Gabungkan data
         $data = [];
         foreach ($barangData as $barang) {
             $kodeBarang = $barang['kode_barang'];
@@ -965,20 +895,18 @@ class Admin extends BaseController
         return view('admin/laporan/stokBulanan', ['data' => $data, 'bulan' => $bulan, 'tahun' => $tahun]);
     }
 
+
     public function cetakStok()
     {
         $barangModel = new Barang();
         $detailPenjualanModel = new DetailPenjualan();
         $detailPembelianModel = new DetailPembelian();
 
-        // Ambil filter bulan dan tahun dari query parameter
         $bulan = $this->request->getGet('bulan');
         $tahun = $this->request->getGet('tahun');
 
-        // Ambil data barang
         $barangData = $barangModel->findAll();
 
-        // Ambil data penjualan berdasarkan bulan dan tahun (jika ada filter)
         $penjualanQuery = $detailPenjualanModel
             ->select('kode_barang, SUM(qty) as total_qty')
             ->join('penjualan', 'detail_penjualan.id_penjualan = penjualan.id_penjualan')
@@ -990,7 +918,6 @@ class Admin extends BaseController
         }
         $penjualan = $penjualanQuery->findAll();
 
-        // Ambil data pembelian berdasarkan bulan dan tahun (jika ada filter)
         $pembelianQuery = $detailPembelianModel
             ->select('kode_barang, SUM(qty) as total_qty')
             ->join('pembelian', 'detail_pembelian.id_pembelian = pembelian.id_pembelian')
@@ -1002,7 +929,6 @@ class Admin extends BaseController
         }
         $pembelian = $pembelianQuery->findAll();
 
-        // Buat mapping data penjualan dan pembelian
         $penjualanMap = [];
         foreach ($penjualan as $p) {
             $penjualanMap[$p['kode_barang']] = $p['total_qty'];
@@ -1013,7 +939,6 @@ class Admin extends BaseController
             $pembelianMap[$p['kode_barang']] = $p['total_qty'];
         }
 
-        // Gabungkan data
         $data = [];
         foreach ($barangData as $barang) {
             $kodeBarang = $barang['kode_barang'];
@@ -1027,44 +952,32 @@ class Admin extends BaseController
             ];
         }
 
-        // Generate HTML untuk laporan
         $html = view('admin/laporan/cetakStok', [
             'data' => $data,
             'bulan' => $bulan,
             'tahun' => $tahun
         ]);
 
-        // Konfigurasi Dompdf
         $options = new Options();
         $options->set('defaultFont', 'Helvetica');
         $options->set('isHtml5ParserEnabled', true);
         $dompdf = new Dompdf($options);
 
-        // Load HTML ke Dompdf
         $dompdf->loadHtml($html);
-
-        // Set ukuran dan orientasi kertas
         $dompdf->setPaper('A4', 'portrait');
-
-        // Render PDF
         $dompdf->render();
-
-        // Kirimkan file ke browser untuk diunduh
         $dompdf->stream('Laporan_Stok_' . $bulan . '_' . $tahun . '.pdf', ['Attachment' => 1]);
-
-        // Menghentikan eksekusi setelah mengunduh
         exit;
     }
 
     // laporan pemebelian bulanan
     public function laporanPembelianBulanan()
     {
-        $bulan = $this->request->getVar('bulan') ?? date('m'); // Ambil bulan dari request, default bulan sekarang
-        $tahun = $this->request->getVar('tahun') ?? date('Y'); // Ambil tahun dari request, default tahun sekarang
+        $bulan = $this->request->getVar('bulan') ?? date('m'); 
+        $tahun = $this->request->getVar('tahun') ?? date('Y'); 
 
         $pembelianModel = new \App\Models\Pembelian();
 
-        // Ambil data pembelian berdasarkan bulan dan tahun
         $dataPembelian = $pembelianModel->select('pembelian.*, supplier.nama_supplier, detail_pembelian.qty, detail_pembelian.harga AS harga_satuan, barang.nama_barang, barang.brand')
             ->join('detail_pembelian', 'pembelian.id_pembelian = detail_pembelian.id_pembelian')
             ->join('barang', 'detail_pembelian.kode_barang = barang.kode_barang')
@@ -1103,7 +1016,6 @@ class Admin extends BaseController
             'pembelian' => $query,
         ];
 
-        // Menggunakan Dompdf untuk generate laporan
         $dompdf = new Dompdf();
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);
@@ -1113,15 +1025,14 @@ class Admin extends BaseController
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
-
         $dompdf->stream("laporan_pembelian_bulanan.pdf", ["Attachment" => 0]);
     }
 
-    // laporan pemebelian bulanan
+    // laporan penjualan bulanan
     public function laporanPenjualanBulanan()
     {
-        $bulan = $this->request->getVar('bulan') ?? date('m'); // Ambil bulan dari request, default bulan sekarang
-        $tahun = $this->request->getVar('tahun') ?? date('Y'); // Ambil tahun dari request, default tahun sekarang
+        $bulan = $this->request->getVar('bulan') ?? date('m'); 
+        $tahun = $this->request->getVar('tahun') ?? date('Y'); 
 
         $penjualanModel = new \App\Models\Penjualan();
 
@@ -1161,7 +1072,6 @@ class Admin extends BaseController
             'penjualan' => $query,
         ];
 
-        // Menggunakan Dompdf untuk generate laporan
         $dompdf = new Dompdf();
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);

@@ -8,7 +8,6 @@ Edit Barang
 <div class="container mt-5">
     <h1>Edit Barang</h1>
 
-    <!-- Form Edit Barang -->
     <form action="<?= site_url('Admin/barang/edit/' . $barang['kode_barang']); ?>" method="POST">
         <?= csrf_field(); ?>
 

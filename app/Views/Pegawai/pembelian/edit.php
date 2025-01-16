@@ -1,6 +1,6 @@
 <?= $this->extend('Pegawai/layouts/main') ?>
 <?= $this->section('title') ?>
-PANEL Pegawai - Edit Pembelian
+PANEL PEGAWAI - Edit Pembelian
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>

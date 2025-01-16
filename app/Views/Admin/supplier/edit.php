@@ -1,4 +1,3 @@
-// Admin/supplier/edit.php
 <?= $this->extend('Admin/layouts/main') ?>
 
 <?= $this->section('title') ?>

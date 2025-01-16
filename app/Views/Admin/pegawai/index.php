@@ -65,15 +65,19 @@ PANEL ADMIN - Data Pegawai
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p><strong>Username:</strong> <?= $user['username']; ?></p>
-                                        <p><strong>Nama Lengkap:</strong> <?= $user['fullname']; ?></p>
-                                        <p><strong>Alamat:</strong> <?= $user['alamat']; ?></p>
-                                        <p><strong>No. HP:</strong> <?= $user['hp']; ?></p>
-                                        <p><strong>Foto:</strong></p>
-                                        <img src="<?= base_url('uploads/' . $user['foto']); ?>" alt="Foto" width="100" height="100">
-                                        <p><strong>Level:</strong> <?= ucfirst($user['level']); ?></p>
-                                        <p><strong>Status:</strong> <?= $user['active'] == 1 ? 'Aktif' : 'Tidak Aktif'; ?></p>
-                                        <p><strong>Terakhir Login:</strong> <?= $user['last_login']; ?></p>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <p class="card-text"><strong>Username:</strong> <?= $user['username']; ?></p>
+                                                <p class="card-text"><strong>Nama Lengkap:</strong> <?= $user['fullname']; ?></p>
+                                                <p class="card-text"><strong>Alamat:</strong> <?= $user['alamat']; ?></p>
+                                                <p class="card-text"><strong>No. HP:</strong> <?= $user['hp']; ?></p>
+                                                <p class="card-text"><strong>Foto:</strong></p>
+                                                <img src="<?= base_url('uploads/' . $user['foto']); ?>" alt="Foto" class="img-fluid rounded mb-3" style="max-width: 150px;">
+                                                <p class="card-text"><strong>Level:</strong> <?= ucfirst($user['level']); ?></p>
+                                                <p class="card-text"><strong>Status:</strong> <?= $user['active'] == 1 ? 'Aktif' : 'Tidak Aktif'; ?></p>
+                                                <p class="card-text"><strong>Terakhir Login:</strong> <?= $user['last_login']; ?></p>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
